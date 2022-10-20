@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 
+@font-face {
+    font-family: 'treenightregular';
+    src: url('/fonts/treenight-webfont.woff2') format('woff2'),
+         url('/fonts/treenight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     padding: 0;
     margin: 0 auto;
@@ -13,7 +22,7 @@ body{
     background-image: url('../uploads/texture.webp');
     background-size: cover;
     display: flex;
-    font-family: Poppins;
+    font-family: 'treenightregular';
     min-height:100vh;
     flex-direction: column;
 }

@@ -9,6 +9,9 @@
     <link rel="icon" type="image/png" href="/uploads/icon.png" />
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    @section('css')
+
+    @show
 
 </head>
 
@@ -19,7 +22,7 @@
         <img src="/uploads/fissure3.png" />
     </header>
 
-  
+
     @yield('content')
   
 

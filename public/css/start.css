@@ -1,0 +1,9 @@
+.start{
+    display: flex;
+}
+
+.video{
+    flex-basis: 60%;
+    background-color: black;
+    margin: 2em;
+}
