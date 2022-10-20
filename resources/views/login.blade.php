@@ -5,7 +5,7 @@
 @section('content')
 <section class='login'>
     <div class='titre'><h2>Connexion</h2></div>
-   
+    <img src='/uploads/Tim_line.png'>
         <form >
         <label for="username">Nom de l'équipe :</label>
         <input type="text" id="login" name="login" placeholder="nom de l'équipe">

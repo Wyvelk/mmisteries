@@ -6,7 +6,15 @@
     margin: 0 auto;
     height: 600px;
     justify-content: center;
+    position: relative;
     
+}
+
+.login img{
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    left: 5%;
 }
 
 form{
