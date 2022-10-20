@@ -39,10 +39,14 @@ header img{
     padding-top: 1em;
 }
 
-
-
-
-
+.start{
+    background-image: url('/uploads/fond.jpg');
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    z-index: -1;
+    height: 600px;
+}
 
 /*FOOTER*/
 
