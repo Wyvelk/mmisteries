@@ -22,9 +22,19 @@ body{
     background-image: url('../uploads/texture.webp');
     background-size: cover;
     display: flex;
-    font-family: 'treenightregular';
+    font-family: 'poppins';
     min-height:100vh;
     flex-direction: column;
+}
+
+h2 {
+    color: white;
+    font-family: 'treenightregular';
+    font-size: 5rem;
+}
+
+.titre{
+   padding-top: 2rem;
 }
 
 /*HEAD*/
@@ -35,6 +45,7 @@ header{
     padding: 2em;
     justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    z-index : 1;
 }
 
 header img{
@@ -48,14 +59,7 @@ header img{
     padding-top: 1em;
 }
 
-.start{
-    background-image: url('/uploads/fond.jpg');
-    background-size: cover;
-    width: 100%;
-    margin: 0;
-    z-index: -1;
-    height: 600px;
-}
+
 
 /*FOOTER*/
 
@@ -75,6 +79,3 @@ footer img{
     width: 80px;
 }
 
-h2 {
-    color: white;
-}
