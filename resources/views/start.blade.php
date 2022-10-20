@@ -8,8 +8,8 @@
 <section class='start'>
     <div class='video'></div>
     <div class='join'>
-    <h3>L'IUT n'est pas ce que vous imaginez...</h3>
-    <button>Rejoignez l'aventure dès maintenant !</button>
+        <h3>L'IUT n'est pas ce que vous imaginez...</h3>
+        <a href='/register'>Rejoignez l'aventure dès maintenant !</a>
     </div>
 </section>
 

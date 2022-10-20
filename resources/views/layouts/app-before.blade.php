@@ -17,9 +17,11 @@
 
 <body>
     <header>
+      <div>
         <img src="/uploads/fissure2.png" />
         <img id='logo' src="/uploads/logo.png" />
         <img src="/uploads/fissure3.png" />
+</div>
     </header>
 
 

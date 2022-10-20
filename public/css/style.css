@@ -22,7 +22,7 @@ body{
     background-image: url('../uploads/texture.webp');
     background-size: cover;
     display: flex;
-    font-family: 'treenightregular';
+    font-family: Poppins;
     min-height:100vh;
     flex-direction: column;
 }
@@ -32,30 +32,45 @@ body{
 header{
     background-color: #411355;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 2em;
-    justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    z-index: 1;
+}
+
+header > div{
+    text-align: center;
+    justify-content: space-between;
+}
+
+nav{
+    margin: 1em auto;
+    margin-top: 3em;
+    text-align: center;
+    width: 90%;
+    justify-content: space-between;
+}
+
+nav a{
+    color: white;
+    text-transform: uppercase;
+    padding: 3em;
+    font-size: x-large;
 }
 
 header img{
-    width: 10%;
-    height: 10%;
+    width: 7%;
+    height: 7%;
 }
 
 #logo{
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
     padding-top: 1em;
 }
 
-.start{
-    background-image: url('/uploads/fond.jpg');
-    background-size: cover;
-    width: 100%;
-    margin: 0;
-    z-index: -1;
-    height: 600px;
-}
+
 
 /*FOOTER*/
 

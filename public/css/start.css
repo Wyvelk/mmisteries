@@ -1,9 +1,51 @@
 .start{
     display: flex;
+    background-image: url('/uploads/fond.jpg');
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    height: 600px;
+    color: white;
 }
 
 .video{
     flex-basis: 60%;
     background-color: black;
     margin: 2em;
+}
+
+.join{
+    margin: 2em;
+    margin-right:0;
+    flex-basis: 40%;
+    position: relative;
+}
+
+.join h3{
+    font-size: 2vw;
+    font-family: treenightregular;
+    letter-spacing: 4px;
+    margin-top: 4em;
+}
+
+.join a{
+    background-color: #f3d521;
+    border: none;
+    padding: 1em;
+    width: 150%;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    bottom: 20%;
+    font-family: Poppins;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8vw;
+    border-radius: 50px 0 0 50px;
+    transition: 0.3s;
+}
+
+.join a:hover{
+    letter-spacing: 3px;
+    transition: 0.3s;
 }
