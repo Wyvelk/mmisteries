@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
 
-//un test
+Route::get('/', [FirstController::class, 'start']);
+
+Route::get('/login', [FirstController::class, 'login']);
+Route::post('/loginT', [FirstController::class, 'loginT']);
+
+Route::get('/register', [FirstController::class, 'register']);
+Route::get('/accueil', [FirstController::class, 'accueil']);
