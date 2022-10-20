@@ -19,9 +19,9 @@
         <img src="/uploads/fissure3.png" />
     </header>
 
-  <section class="content">
+  
     @yield('content')
-  </section>
+  
 
   @section('bottomMenu')
     @include('layouts.bottomMenu')
