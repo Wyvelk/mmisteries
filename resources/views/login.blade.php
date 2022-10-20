@@ -8,9 +8,9 @@
     <img src='/uploads/Tim_line.png'>
         <form >
         <label for="username">Nom de l'équipe :</label>
-        <input type="text" id="login" name="login" placeholder="nom de l'équipe">
+        <input type="text" id="login" name="login" placeholder="Nom de l'équipe">
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="pass" placeholder="mot de passe">
+        <input type="password" id="password" name="pass" placeholder="Mot de passe">
         <input type="submit" class="bouton" value="Valider">
         </form>
     

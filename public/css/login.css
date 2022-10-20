@@ -48,8 +48,10 @@ input{
 
 .bouton{
     width: 20em;
-    margin:auto;
+    margin: 0 auto;
+    padding: 0;
     background: none;
+    width: 20%;
     transition: 0.5s;
     font-family: 'poppins';
     font-weight: bold;
