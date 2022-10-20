@@ -27,6 +27,16 @@ body{
     flex-direction: column;
 }
 
+h2 {
+    color: white;
+    font-family: 'treenightregular';
+    font-size: 5rem;
+}
+
+.titre{
+   padding-top: 2rem;
+}
+
 /*HEAD*/
 
 header{
@@ -90,6 +100,3 @@ footer img{
     width: 80px;
 }
 
-h2 {
-    color: white;
-}

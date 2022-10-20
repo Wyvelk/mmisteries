@@ -1,0 +1,58 @@
+.login{
+    text-align: center;
+    background-image: url('/uploads/fond.jpg');
+    background-size: cover;
+    width: 100%;
+    margin: 0 auto;
+    height: 600px;
+    justify-content: center;
+    
+}
+
+form{
+    text-shadow: 3px 2px 3px rgba(0,0,0,0.6);
+    font-weight: bold;
+    font-size: 2rem;
+    color:white;
+    padding-top:2rem;
+    padding-bottom:2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3d521;
+    margin:2rem auto;
+    width: 40%;
+    border-radius: 20px;
+    box-shadow: 25px 17px 52px 7px rgba(0,0,0,0.5);
+-webkit-box-shadow: 25px 17px 52px 7px rgba(0,0,0,0.5);
+-moz-box-shadow: 25px 17px 52px 7px rgba(0,0,0,0.5);
+
+
+}
+
+input{
+    margin:1.5rem;
+    height: 2rem;
+    border-radius: 10px;
+    border:none;
+    padding-left: 0.5em;
+    
+}
+
+.bouton{
+    width: 20em;
+    margin:auto;
+    background: none;
+    transition: 0.5s;
+    font-family: 'poppins';
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:white;
+}
+
+.bouton:hover{
+    cursor: pointer;
+    background-color: #fceb8d;
+    color:black;
+    transition: 0.5s;
+}
+
