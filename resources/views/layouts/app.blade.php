@@ -22,6 +22,7 @@
         <img id='logo' src="/uploads/logo.png" />
         <img src="/uploads/fissure3.png" />
 </div>
+<img id='login-team' src='/uploads/login.png'>
     <nav>
         <a>Accueil</a>
         <a>Histoire</a>
