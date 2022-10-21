@@ -33,4 +33,8 @@ class FirstController extends Controller
     public function contact() {
         return view('contact');
     }
+
+    public function accueil() {
+        return view('accueil');
+    }
 }
