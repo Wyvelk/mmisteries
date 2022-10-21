@@ -22,3 +22,5 @@ Route::post('/loginT', [FirstController::class, 'loginT']);
 Route::get('/register', [FirstController::class, 'register']);
 Route::post('/registerT', [FirstController::class, 'registerT']);
 Route::get('/accueil', [FirstController::class, 'accueil']);
+
+Route::get('/contact',[FirstController::class,'contact']);

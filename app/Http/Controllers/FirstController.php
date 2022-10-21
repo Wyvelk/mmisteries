@@ -29,4 +29,8 @@ class FirstController extends Controller
         return redirect('/');
 
     }
+
+    public function contact() {
+        return view('contact');
+    }
 }
