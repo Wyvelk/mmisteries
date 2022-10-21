@@ -1,4 +1,4 @@
-.start{
+.start {
     display: flex;
     background-image: url('/uploads/fond.jpg');
     background-size: cover;
@@ -8,7 +8,7 @@
     color: white;
 }
 
-.start img{
-    width:50%;
+.start img {
+    width: 50%;
     height: auto;
 }

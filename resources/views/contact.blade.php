@@ -14,7 +14,7 @@
         <textarea id="message" name="message" placeholder="ecrivez votre message ici..." wrap="hard" required="required"></textarea>
         <input type="submit" class="bouton" value="Envoyer">
     </form>
-    
-    </section>
+
+</section>
 
 @endsection
