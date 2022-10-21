@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,11 @@ use App\Http\Controllers\FirstController;
 
 Route::get('/', [FirstController::class, 'start']);
 
-Route::get('/login', [FirstController::class, 'login']);
-Route::post('/loginT', [FirstController::class, 'loginT']);
-
-Route::get('/register', [FirstController::class, 'register']);
-Route::post('/registerT', [FirstController::class, 'registerT']);
 Route::get('/accueil', [FirstController::class, 'accueil']);
+
+Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
+Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');

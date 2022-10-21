@@ -24,9 +24,15 @@ class FirstController extends Controller
     }
 
     public function registerT() {
+        $noms = DB::select("select nom from equipes");
+        foreach($noms as $v){
+            if($v == $_POST['login']){
+                return redirect('register');
+            }
+        }
         DB::select("insert into `equipes`(`nom`, `slogan`, `score`, `password`, `instagram`) VALUES (?, ?, 0, ?, ?)", [$_POST['login'], $_POST['slogan'], sha1($_POST['pass']), $_POST['insta']]);
-        
-        return redirect('/');
-
+        Session::put('login', $_POST['login']);
+        $login = Session::get('login');
+        return view('start', ['login'=>$login]);
     }
 }

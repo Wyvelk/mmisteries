@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <section class='start'>
     <div class='video'></div>
     <div class='join'>
@@ -12,7 +13,7 @@
         <p>Fin des inscriptions dans :</p>
         <p id='demo'></p>
         
-        <a href='/register'>Rejoignez l'aventure dès maintenant !</a>
+        <a href='/registration'>Rejoignez l'aventure dès maintenant !</a>
     </div>
 </section>
 <script type="text/javascript" src="/js/decompte.js"></script>

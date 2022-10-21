@@ -21,10 +21,13 @@
         <img src="/uploads/fissure2.png" />
         <a href='/'><img id='logo' src="/uploads/logo.png" /></a>
         <img src="/uploads/fissure3.png" />
-</div>
-        <a href='/login'><img id='login-team' src='/uploads/login.png'></a>
+      </div>
+      <a href='/login'><img id='login-team' src='/uploads/login.png'></a>
     </header>
-
+    @auth
+    <p>coucou</p>
+    {{ Auth::user()->name }}
+    @endauth
 
     @yield('content')
   
