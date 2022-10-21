@@ -1,0 +1,14 @@
+.start{
+    display: flex;
+    background-image: url('/uploads/fond.jpg');
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    height: 80vh;
+    color: white;
+}
+
+.start img{
+    width:50%;
+    height: auto;
+}
