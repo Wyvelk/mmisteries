@@ -20,4 +20,5 @@ Route::get('/login', [FirstController::class, 'login']);
 Route::post('/loginT', [FirstController::class, 'loginT']);
 
 Route::get('/register', [FirstController::class, 'register']);
+Route::post('/registerT', [FirstController::class, 'registerT']);
 Route::get('/accueil', [FirstController::class, 'accueil']);

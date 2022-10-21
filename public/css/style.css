@@ -20,7 +20,7 @@
 
 body{
     background-image: url('../uploads/texture.webp');
-    background-size: cover;
+    background-size: contain;
     display: flex;
     font-family: Poppins;
     min-height:100vh;
@@ -93,7 +93,9 @@ footer{
     text-align: center;
     color: white;
     padding: 1em;
+    z-index: 1;
     background-color: #411355;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 footer img{

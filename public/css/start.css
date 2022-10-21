@@ -4,7 +4,7 @@
     background-size: cover;
     width: 100%;
     margin: 0;
-    height: 600px;
+    height: 80vh;
     color: white;
 }
 
@@ -25,7 +25,7 @@
     font-size: 2vw;
     font-family: treenightregular;
     letter-spacing: 4px;
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
 .join a{
@@ -43,6 +43,12 @@
     font-size: 1.8vw;
     border-radius: 50px 0 0 50px;
     transition: 0.3s;
+}
+
+.join p{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3em;
 }
 
 .join a:hover{

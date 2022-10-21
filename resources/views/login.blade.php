@@ -13,7 +13,7 @@
         <input type="password" id="password" name="pass" placeholder="Mot de passe">
         <input type="submit" class="bouton" value="Valider">
         </form>
-    
+        <p>Vous n'avez pas encore d'équipe ? Créez-en une ici !</p>
 </section>
 
 @endsection('content')
