@@ -3,11 +3,26 @@
     background-image: url('/uploads/fond.jpg');
     background-size: cover;
     width: 100%;
+    height: auto;
+    min-height: 700px;
+    max-height: 100%;
     margin: 0 auto;
-    height: 100%;
     justify-content: center;
     position: relative;
     padding-top: 3em;
+}
+
+.login p, .register p, .login a, .register a{
+    color: white;
+    text-decoration: none;
+    padding-bottom: 1em;
+    transition: 0.5s;
+}
+
+.login a:hover, .register a:hover{
+    transition: 0.5s;
+    color: #f3d521;
+    font-weight: bold;
 }
 
 .login img{
