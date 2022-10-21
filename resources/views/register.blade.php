@@ -17,7 +17,7 @@
         <input type="text" id="instagram-chef" name="insta" placeholder="Instagram" required='required'>
         <input type="submit" class="bouton" value="Valider">
     </form>
-    <p>Si vous avez déjà une équipe, <a href='/login'>connectez-vous !</a></p>
+    <p>Si vous avez déjà une équipe, <a href='/login'>connectez-vous</a> !</p>
     </section>
 
 @endsection
