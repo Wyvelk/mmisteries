@@ -8,9 +8,9 @@
         <form method="POST" action="{{ route('login.custom') }}">
         @csrf
             <label for="username">Nom de l'équipe</label>
-            <input type="text" placeholder="Email" id="email" class="form-control" name="email" required autofocus>
-                @if ($errors->has('email'))
-                <span class="text-danger">{{ $errors->first('email') }}</span>
+            <input type="text" placeholder="Nom de l'équipe" id="email" class="form-control" name="name" required autofocus>
+                @if ($errors->has('name'))
+                <span class="text-danger">{{ $errors->first('name') }}</span>
                 @endif
             <label for="password">Mot de passe</label>
             <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
@@ -19,6 +19,9 @@
                  @endif
                  <input type="submit" class="bouton" value="Valider">
         </form>
+        @if(session('success'))
+    <p>{{session('success')}}</p>
+@endif
         <p>Vous n'avez pas encore d'équipe ? <a href='/registration'>Créez-en une ici</a> !</p>
 </section>
 @endsection

@@ -35,4 +35,12 @@ class FirstController extends Controller
         $login = Session::get('login');
         return view('start', ['login'=>$login]);
     }
+
+    public function contact() {
+        return view('contact');
+    }
+
+    public function accueil() {
+        return view('accueil');
+    }
 }

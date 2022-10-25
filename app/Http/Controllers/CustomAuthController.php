@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Hash;
-use Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 class CustomAuthController extends Controller
@@ -15,10 +15,10 @@ class CustomAuthController extends Controller
     public function customLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
         
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/')
@@ -51,24 +51,15 @@ class CustomAuthController extends Controller
             'email' => 'required',
         ]);
         $data = $request->all();
-        $check = $this->create($data);
-        $credentials = $request->only('email', 'password');
+        $this->create($data);
+        $credentials = $request->only('name', 'email', 'password');
         
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/')
                         ->withSuccess('Signed in');
         }
-
-    }
-
-    
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-  
-        return redirect("login")->withSuccess("C'est non.");
+        
+        return redirect('/registration')->withSuccess('Cette équipe existe déjà...');
     }
     
     public function signOut() {
