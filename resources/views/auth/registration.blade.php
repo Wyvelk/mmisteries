@@ -5,6 +5,9 @@
 @section('content')
 <section class='register'>
     <h2>Créez votre équipe</h2>
+    @if(session('success'))
+    <h3>{{session('success')}}</h3>
+@endif
     <form action="{{ route('register.custom') }}" method="POST">
         @csrf
         <label for="username">Nom de l'équipe</label>
@@ -26,6 +29,7 @@
         @endif
         <input type="submit" class="bouton" value="Créer">
     </form>
+
     <p>Si vous avez déjà une équipe, <a href='/login'>connectez-vous</a> !</p>
 
 </section>

@@ -6,9 +6,128 @@
     margin: 0;
     height: 80vh;
     color: white;
+    position: relative;
 }
 
 .start img{
-    width:50%;
+    width: 20%;
     height: auto;
+    margin-top: 2em;
+}
+
+.video{
+    flex-basis: 50%;
+    background-color: black;
+    margin: 3em;
+}
+
+.avancee{
+    width: 100%;
+    margin-bottom: 4em;
+    z-index: 1;
+}
+
+.avancee h1, .recompenses h1{
+    font-size: 3rem;
+    margin-top: -1em;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    letter-spacing: 2px;
+    background-color: #411355;
+    padding: 0.5em;
+    width: 45%;
+    margin-left: 55%;
+    border-radius: 50px 0 0 50px;
+}
+
+.equipe{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+
+.equipe img{
+    border-radius: 50%;
+    background-color: black;
+}
+
+.equipe h3{
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.equipe i{
+    font-family: treenightregular;
+    font-style: normal;
+    color: #f3d521;
+    transition: 0.5s;
+}
+
+.equipe i:hover{
+    letter-spacing: 2px;
+    transition: 0.5s;
+    font-size: 3.3rem;
+}
+
+.bandeau{
+    display: flex;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 1em;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    justify-content: space-between;
+    background-color: #eae655;
+}
+
+.bandeau h4{
+    color: white;
+    padding: 1em;
+    font-size: x-large;
+}
+
+.bandeau h3{
+    font-size: xx-large;
+    transition: 1s;
+    padding: 1em;
+}
+
+.bandeau div{
+    transition: 1s;
+    flex-basis: 33%;
+}
+
+.bandeau div:hover{
+    flex-basis: 40%;
+    transition: 1s;
+}
+
+.bandeau h3:hover{
+    transform: translateY(10%);
+    transition: 1s;
+}
+
+.bandeau svg{
+    transition: 1s;
+}
+
+.bandeau svg:hover{
+    rotate: calc(360deg);
+}
+
+.bandeau div img{
+    width: 80px;
+    height: auto;
+}
+
+.recompenses{
+    width: 100%;
+}
+
+.recompenses h1{
+    margin-right: 55%;
+    margin-left: 0;
+    text-align: right;
+    border-radius: 0 50px 50px 0;
 }

@@ -27,7 +27,7 @@ body{
     flex-direction: column;
 }
 
-h2 {
+h2, h1 {
     color: white;
     font-family: 'treenightregular';
     font-size: 5rem;
@@ -53,11 +53,30 @@ header{
 
 #login-team{
     position: absolute;
-    width: 5%;
+    display: flex;
     right: 5%;
-    bottom: 35%;
+    top: 10px;
     height: auto;
+    width: 10%;
 }
+
+#login-team div{
+    flex-direction: column;
+    display: flex;
+}
+
+#login-team img{
+    width: 60px;
+    height: auto;
+
+}
+
+#login-team span{
+    color: white;
+    font-size: 1vw;
+}
+
+
 
 header > div{
     text-align: center;
@@ -65,7 +84,7 @@ header > div{
 }
 
 nav{
-    margin: 1em auto;
+    margin: 0.5em auto;
     margin-top: 3em;
     text-align: center;
     width: 90%;
@@ -76,7 +95,16 @@ nav a{
     color: white;
     text-transform: uppercase;
     padding: 3em;
-    font-size: x-large;
+    font-size: large;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+nav a:hover{
+    letter-spacing: 3px;
+    transition: 0.5s;
+    
+    font-weight: bold;
 }
 
 header img{
@@ -84,12 +112,18 @@ header img{
     height: 7%;
 }
 
+
+
 #logo{
     width: 30%;
     height: 30%;
     padding-top: 1em;
 }
 
+.menu-nav{
+    width: 50%;
+    height: auto;
+}
 
 
 /*FOOTER*/
@@ -102,6 +136,8 @@ footer{
     width: 100%;
     text-align: center;
     color: white;
+    display: flex;
+    justify-content: space-between;
     padding: 1em;
     z-index: 1;
     background-color: #411355;
@@ -110,5 +146,6 @@ footer{
 
 footer img{
     width: 80px;
+    margin: 1em;
 }
 

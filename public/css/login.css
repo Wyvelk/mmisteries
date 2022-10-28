@@ -16,7 +16,12 @@
     text-decoration: none;
     padding-bottom: 1em;
     transition: 0.5s;
-    
+}
+
+.login h3, .register h3{
+    color: #f3d521;
+    padding: 1em;
+    padding-bottom: 0;
 }
 
 .login a:hover, .register a:hover{

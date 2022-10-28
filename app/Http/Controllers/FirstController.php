@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FirstController extends Controller
 {
@@ -41,6 +42,10 @@ class FirstController extends Controller
     }
 
     public function accueil() {
-        return view('accueil');
+        if(Auth::check()){
+            return view('accueil');
+        } else {
+            return redirect('login');
+        }
     }
 }

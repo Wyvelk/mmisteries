@@ -1,4 +1,4 @@
-@extends('layouts.app-before')
+@extends('layouts.app')
 @section('css')
 <link href='/css/login.css' rel='stylesheet'>
 @endsection
