@@ -47,11 +47,27 @@
 
 .join p{
     text-align: center;
+    margin-top: 1em;
     font-weight: bold;
-    margin-top: 3em;
 }
 
 .join a:hover{
     letter-spacing: 3px;
     transition: 0.3s;
+}
+
+.join > div{
+    display: flex;
+    margin-top: 2em;
+}
+
+.join div div{
+    text-align: center;
+}
+
+.join > div span{
+    width: 50%;
+    font-weight: lighter;
+    font-size: xx-large;
+    
 }
