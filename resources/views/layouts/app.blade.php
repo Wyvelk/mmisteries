@@ -37,7 +37,7 @@
             @endguest
         </div>
         <nav>
-            <a>Accueil</a>
+            <a href='/accueil'>Accueil</a>
             <a>Histoire</a>
             <a>Aventure</a>
             <a href='/contact'>Contact</a>
