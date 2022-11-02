@@ -19,7 +19,7 @@
   }
 
 body{
-    background-image: url('../uploads/texture.webp');
+    background-image: url('../uploads/texture.jpg');
     background-size: cover;
     display: flex;
     font-family: Poppins;

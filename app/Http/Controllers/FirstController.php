@@ -48,4 +48,12 @@ class FirstController extends Controller
             return redirect('login');
         }
     }
+
+    public function adventure() {
+        if(Auth::check()){
+            return view('adventure');
+        } else {
+            return redirect('login');
+        }
+    }
 }

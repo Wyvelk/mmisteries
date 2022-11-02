@@ -1,0 +1,167 @@
+.aventure{
+    margin: 3em;
+    display: flex;
+}
+
+.aventure h3{
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+.aventure h2{
+    font-size: xx-large;
+    text-align: center;
+    margin: 1em;
+    color: black;
+}
+
+.aventure h3::after{
+    content: '';
+    background-color: #f0c600;
+    position: absolute;
+    bottom: -2.5px;
+    left: 0;
+    width: 100px;
+    height: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.aventure h3:hover::after{
+    left: 25%;
+    transition: 0.5s;
+}
+
+.text{
+    flex-basis: 45%;
+    margin: 0;
+}
+
+.text div div{
+    display: flex;
+}
+
+.text div div h4{
+    margin-left: 0;
+}
+
+.text div a{
+    background-color: #f0c600;
+    margin: 0;
+    margin-top: 1em;
+    display: block;
+    padding: 1em;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    width: 45%;
+    margin-left: 55%;
+    transition: 0.3s;
+}
+
+.text div a:hover{
+    color:#f0c600;
+    background-color: white;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.barre-progression{
+    border: 5px solid black;
+    background-color: black;
+    width: 20px;
+    border-radius: 10px;
+    height: 2000px;
+    z-index: 0;
+    margin-top: 4em;
+    position: relative;
+    
+}
+
+.point{
+    background-color: #f0c600;
+    height: 40px;
+    width: 40px;
+    border: 7px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.point:hover{
+    width: 50px;
+    height: 50px;
+    left: -20px;
+    transition: 0.3s;
+    z-index: 0;
+    border: 4px solid black;
+}
+
+.point a{
+    padding-left: 3em;
+    width: 300px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    top: 5px;
+    position: absolute;
+}
+
+#etudiant{
+    top: 30%;
+    z-index: 0;
+    background-color: #411355;
+}
+
+#portail{
+    top: 50%;
+    background-color: #411355;
+}
+
+#creature{
+    top: 60%;
+    background-color: #411355;
+}
+
+#arme{
+    top: 75%;
+    background-color: #411355;
+}
+
+#boussole{
+    top: 90%;
+    background-color: #411355;
+}
+
+#fin{
+    top: 99%;
+    background-color: #411355;
+}
+.progression{
+    background-color: #f0c600;
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+}
+
+#yellow{
+    color: #f0c600;
+    font-size: large;
+    transition: 0.3s;
+}
+
+#purple{
+    color: #411355;
+    font-size: large;
+    transition: 0.3s;
+}
+
+#yellow:hover, #purple:hover{
+    letter-spacing: 1px;
+    transition: 0.3s;
+}

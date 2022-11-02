@@ -38,8 +38,8 @@
         </div>
         <nav>
             <a href='/accueil'>Accueil</a>
-            <a>Histoire</a>
-            <a>Aventure</a>
+            <a>Journal</a>
+            <a href='/adventure'>Aventure</a>
             <a href='/contact'>Contact</a>
         </nav>
     </header>
