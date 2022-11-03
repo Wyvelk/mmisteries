@@ -51,14 +51,16 @@ class FirstController extends Controller
 
     public function adventure() {
         if(Auth::check()){
-            return view('adventure');
+            $missions = DB::select('select * from missions');
+            return view('adventure', ['missions'=>$missions]);
         } else {
             return redirect('login');
         }
     }
 
-    public function mission() {
+    public function mission($id) {
         if(Auth::check()){
+            DB::select('select id from missions where id = ?', [$id]);
             return view('mission');
         } else {
             return redirect('login');

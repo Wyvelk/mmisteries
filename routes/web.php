@@ -19,7 +19,7 @@ Route::get('/', [FirstController::class, 'start']);
 
 Route::get('/accueil', [FirstController::class, 'accueil']);
 Route::get('/adventure', [FirstController::class, 'adventure']);
-Route::get('/mission', [FirstController::class, 'mission']);
+Route::get('/mission/{id}', [FirstController::class, 'mission'])-> where('id', '[0-9]+');
 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 

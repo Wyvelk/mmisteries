@@ -55,6 +55,7 @@
 
 .text div div{
     display: flex;
+    margin-top: 1em;
 }
 
 .text div div h4{
@@ -76,6 +77,7 @@
     border-radius: 20px;
     width: 45%;
     margin-left: 55%;
+    text-decoration: none;
     transition: 0.3s;
 }
 

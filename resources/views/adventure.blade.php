@@ -10,18 +10,23 @@
     <img src='/uploads/fissure1.png'>
     <div class='text'>
         <h2>Carnet de bord</h2>
+        @for ($i = 0; $i <= Auth::user()->progression; $i++)
         <div>
-            <h3>Mission 0 ~ Début de l'aventure</h3>
-            <p>{{ Auth::user()->name }}, Tim a besoin de vous, sans plus attendre ! Ce jeune homme est très silencieux et passe souvent inaperçu. Personne dans l'IUT ne connaît son groupe et ne semble se soucier de lui. Vous allez devoir trouver par vous-même ce qui lui est arrivé avant qu'il ne soit trop tard...<div class=""></div>
-            <br />
-            Voici ci-contre le chemin de votre enquête, les <strong id='purple'>points violets</strong> correspondent aux missions non débloquées qui vous attendent. Un <strong id='yellow'>point jaune</strong> correspond à l'inverse à une mission que vous avez réussie et la couleur <strong id='blue'>bleue</strong> à celles disponibles. Cliquez sur la mission que vous avez débloqué pour avancer dans votre quête de sauvetage.</p>
-            <br />
-            <div><h4>Points obtenus : 0 / 230</h4><p>Difficulté : Très facile</p></div>
-            <a>Se rendre sur la mission</a>
+            <h3>{{ $missions[$i]->nom }}</h3>
+            <p>{{ Auth::user()->name }}, <?php echo substr($missions[$i]->description, 0, 280); ?><br /><br />
+            <?php echo substr($missions[$i]->description, 281, 50); echo "<strong id='purple'>". substr($missions[$i]->description, 331, 14) ."</strong>"; echo substr($missions[$i]->description, 345, 68);
+             echo "<strong id='yellow'>". substr($missions[$i]->description, 413, 11) ."</strong>"; 
+             echo substr($missions[$i]->description, 424, 77);
+             echo "<strong id='blue'>". substr($missions[$i]->description, 501, 5) ."</strong>";
+             echo substr($missions[$i]->description, 506, 120);?></p>
+            <div><h4>Points obtenus : 0 / {{$missions[$i]->pointsmax}}</h4><p>Difficulté : {{$missions[$i]->difficulte}}</p></div>
+            <a href='/mission/{{$missions[$i]->id}}'>Se rendre sur la mission</a>
         </div>
+        @endfor
+        
     </div>
     <div class='barre-progression'>
-        <div class='point'><a href='#'>Début de l'aventure</a></div>
+        <div class='point'><a href='mission/1'>Début de l'aventure</a></div>
         <div class='point' id='etudiant'><a href='#'>L'étudiant disparu</a></div>
         <div class='point' id='portail'><a href='#'>Le portail</a></div>
         <div class='point' id='creature'><a href='#'>La créature</a></div>
