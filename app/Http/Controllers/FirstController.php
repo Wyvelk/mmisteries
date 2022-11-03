@@ -56,4 +56,12 @@ class FirstController extends Controller
             return redirect('login');
         }
     }
+
+    public function mission() {
+        if(Auth::check()){
+            return view('mission');
+        } else {
+            return redirect('login');
+        }
+    }
 }

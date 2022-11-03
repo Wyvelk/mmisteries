@@ -5,6 +5,7 @@
 @section('content')
 <section class='login'>
     <h2>Connexion</h2>
+    <img src='/uploads/Tim_line.png'>
     @if(session('success'))
     <h3>{{session('success')}}</h3>
 @endif

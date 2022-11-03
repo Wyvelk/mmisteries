@@ -1,6 +1,7 @@
 .aventure{
     margin: 3em;
     display: flex;
+    position: relative;
 }
 
 .aventure h3{
@@ -13,6 +14,14 @@
     text-align: center;
     margin: 1em;
     color: black;
+}
+
+.aventure img{
+    z-index: -1;
+    position: absolute;
+    width: 25%;
+    top: -10%;
+    right: 0;
 }
 
 .aventure h3::after{
@@ -38,12 +47,22 @@
     margin: 0;
 }
 
+.text > div{
+    border-bottom: 1px solid #411355;
+    padding-bottom: 2em;
+    border-width: 50%;
+}
+
 .text div div{
     display: flex;
 }
 
 .text div div h4{
     margin-left: 0;
+}
+
+.text div div p{
+    margin-right: 0;
 }
 
 .text div a{
@@ -68,7 +87,7 @@
 }
 
 .barre-progression{
-    border: 5px solid black;
+    border: 3px solid black;
     background-color: black;
     width: 20px;
     border-radius: 10px;
@@ -80,34 +99,35 @@
 }
 
 .point{
-    background-color: #f0c600;
+    background-color: RGB(49,102,124);
     height: 40px;
     width: 40px;
     border: 7px solid black;
     border-radius: 50%;
     position: absolute;
     top: -10px;
-    left: -15px;
-    z-index: -1;
+    left: -12.5px;
+    z-index: 0;
     transition: 0.3s;
 }
 
 .point:hover{
     width: 50px;
     height: 50px;
-    left: -20px;
+    left: -18px;
     transition: 0.3s;
     z-index: 0;
     border: 4px solid black;
 }
 
 .point a{
-    padding-left: 3em;
     width: 300px;
     text-decoration: none;
     color: black;
     font-weight: bold;
+    text-align: right;
     top: 5px;
+    right: 35px;
     position: absolute;
 }
 
@@ -145,6 +165,8 @@
     background-color: #f0c600;
     z-index: 1;
     width: 100%;
+    margin-top: 20px;
+    border: 3px solid black;
     border-radius: 10px;
     height: 400px;
 }
@@ -161,7 +183,13 @@
     transition: 0.3s;
 }
 
-#yellow:hover, #purple:hover{
+#blue{
+    color: RGB(49,102,124);
+    font-size: large;
+    transition: 0.3s;
+}
+
+#yellow:hover, #purple:hover, #blue:hover{
     letter-spacing: 1px;
     transition: 0.3s;
 }
