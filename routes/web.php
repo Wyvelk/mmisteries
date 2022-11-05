@@ -21,6 +21,7 @@ Route::get('/accueil', [FirstController::class, 'accueil']);
 Route::get('/adventure', [FirstController::class, 'adventure']);
 Route::get('/mission/{id}', [FirstController::class, 'mission'])-> where('id', '[0-9]+');
 
+Route::get('classement', [FirstController::class, 'classement']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
