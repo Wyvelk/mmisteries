@@ -13,10 +13,12 @@
         <div class='infos'>
             <h3>Informations</h3>
         </div>
-        <div>
+        <div class='enigmes'>
             <h3>Objectif : {{$mission[0]->objectif}}</h3>
+            <div></div>
         </div>
     </div>
+    <a href='#'>Valider</a>
 </section>
 
 

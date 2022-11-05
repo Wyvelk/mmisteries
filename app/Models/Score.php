@@ -13,7 +13,4 @@ class Score extends Model
     protected $table = 'score';
     public $timestamps = false;
 
-    public function pointsmission(){
-        return $this->belongsTo(Mission::class, "idMission");
-    }
 }

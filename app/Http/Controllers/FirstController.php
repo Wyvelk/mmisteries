@@ -45,7 +45,14 @@ class FirstController extends Controller
 
     public function accueil() {
         if(Auth::check()){
-            return view('accueil');
+            $points = Score::whereRaw("idUser=".Auth::user()->id."")->get();
+            $total = 0;
+            for($i = 0; $i < count($points); $i++){
+                $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
+            }
+
+            $achievement = Mission::whereRaw("id=".Auth::user()->progression)->get();
+            return view('accueil', ['total'=>$total, 'achievement'=>$achievement]);
         } else {
             return redirect('login');
         }
@@ -54,7 +61,7 @@ class FirstController extends Controller
     public function adventure() {
         if(Auth::check()){
             $missions = Mission::all();
-            $points = Score::whereRaw("idUser=".Auth::user()->id."")->get(); 
+            $points = Score::whereRaw("idUser=".Auth::user()->id."")->get();
             return view('adventure', ['missions'=>$missions, 'points'=>$points]);
         } else {
             return redirect('login');

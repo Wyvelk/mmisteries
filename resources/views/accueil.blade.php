@@ -27,7 +27,7 @@
                 <rect x="5" y="2" width="6" height="16" rx="1"></rect>
                 <rect x="13" y="6" width="6" height="12" rx="1"></rect>
             </svg>
-            <h3>189</h3>
+            <h3>{{ $total }}</h3>
         </div>
 
         <div>
@@ -35,7 +35,12 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:msFilter; ">
                 <path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.8 6.91 4.82 7A6 6 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09A6 6 0 0 0 17.18 15c3-.1 4.82-2.7 4.82-7V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.22 12.08 4 9.3 4 8zm14 4.83V6h2v2c0 1.3-.22 4.08-2 4.83z"></path>
             </svg>
-            <h3>Créer une équipe</h3>
+            <h3>@if(isset($achievement[0]) == false)
+                    Créer une équipe
+                @else
+                    {{$achievement[0]->objectif}}
+                @endif
+                </h3>
         </div>
 
         <div>

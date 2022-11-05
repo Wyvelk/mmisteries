@@ -51,13 +51,13 @@
 
     </div>
     <div class='barre-progression'>
-        <div class='point'><a href='mission/1'>Début de l'aventure</a></div>
-        <div class='point' id='etudiant'><a href='#'>L'étudiant disparu</a></div>
-        <div class='point' id='portail'><a href='#'>Le portail</a></div>
-        <div class='point' id='creature'><a href='#'>La créature</a></div>
-        <div class='point' id='arme'><a href='#'>L'arme</a></div>
-        <div class='point' id='boussole'><a href='#'>La boussole</a></div>
-        <div class='point' id='fin'><a href='#'>Fin</a></div>
+        <a href='mission/1'>Début de l'aventure<div class='point'></div></a>
+        <a id='etudiant' href='#'>L'étudiant disparu<div class='point' ></div></a>
+        <a id='portail' href='#'>Le portail<div class='point' ></div></a>
+        <a id='creature' href='#'>La créature<div class='point' ></div></a>
+        <a id='arme' href='#'>L'arme<div class='point' ></div></a>
+        <a id='boussole' href='#'>La boussole<div class='point' ></div></a>
+        <a id='fin' href='#'>Fin<div class='point' ></div></a>
         <div class='progression'>
 
         </div>

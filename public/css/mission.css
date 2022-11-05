@@ -11,12 +11,30 @@
     background-color: #eae655;
     flex-basis: 30%;
     border-radius: 15px;
-    box-shadow: 25px 17px 52px 7px rgba(0,0,0,0.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     height: 500px;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: x-large;
 }
 
-.mission div{
+.mission > div{
     display: flex;
     margin: 0;
     margin-top: 0.5em;
+}
+
+.enigmes{
+    flex-basis: 65%;
+}
+
+.enigmes div{
+    background-image: url('../uploads/fond.jpg');
+    background-size: cover;
+    border: 20px solid #eae655;
+    height: 481.27px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
