@@ -24,9 +24,9 @@
     right: 0;
 }
 
+
 .aventure h3::after{
     content: '';
-    background-color: #f0c600;
     position: absolute;
     bottom: -2.5px;
     left: 0;
@@ -35,6 +35,14 @@
     border-radius: 10px;
     transition: 0.5s;
     z-index: -1;
+}
+
+.encours::after{
+    background-color: #31667c;
+}
+
+.reussi::after{
+    background-color: #f0c600;
 }
 
 .aventure h3:hover::after{
@@ -50,6 +58,7 @@
 .text > div{
     border-bottom: 1px solid #411355;
     padding-bottom: 2em;
+    margin-bottom: 1em;
     border-width: 50%;
 }
 

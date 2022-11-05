@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Models\Mission;
+use App\Models\Score;
 use Illuminate\Support\Facades\Auth;
 
 class FirstController extends Controller
@@ -51,8 +53,9 @@ class FirstController extends Controller
 
     public function adventure() {
         if(Auth::check()){
-            $missions = DB::select('select * from missions');
-            return view('adventure', ['missions'=>$missions]);
+            $missions = Mission::all();
+            $points = Score::whereRaw("idUser=".Auth::user()->id."")->get(); 
+            return view('adventure', ['missions'=>$missions, 'points'=>$points]);
         } else {
             return redirect('login');
         }
@@ -60,8 +63,8 @@ class FirstController extends Controller
 
     public function mission($id) {
         if(Auth::check()){
-            DB::select('select id from missions where id = ?', [$id]);
-            return view('mission');
+            $mission = DB::select('select * from missions where id = ?', [$id]);
+            return view('mission', ['mission'=>$mission]);
         } else {
             return redirect('login');
         }

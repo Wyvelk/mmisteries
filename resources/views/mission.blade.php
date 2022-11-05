@@ -7,14 +7,14 @@
 
 @section('content')
 <section class='mission'>
-    <h2>Mission 0 : Début de l'aventure</h2>
-    <h3>Objectif : Trouver le téléphone de Tim</h3>
+    <h2>{{$mission[0]->nom}}</h2>
+    
     <div>
         <div class='infos'>
             <h3>Informations</h3>
         </div>
         <div>
-            
+            <h3>Objectif : {{$mission[0]->objectif}}</h3>
         </div>
     </div>
 </section>
