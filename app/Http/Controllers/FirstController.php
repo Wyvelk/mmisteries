@@ -50,6 +50,10 @@ class FirstController extends Controller
         return view('contact');
     }
 
+    public function equipe() {
+        return view('equipe');
+    }
+
     public function accueil()
     {
         if (Auth::check()) {
@@ -60,7 +64,8 @@ class FirstController extends Controller
             }
 
             $achievement = Mission::whereRaw("id=" . Auth::user()->progression)->get();
-            return view('accueil', ['total' => $total, 'achievement' => $achievement]);
+            $classement = FirstController::classement();
+            return view('accueil', ['total' => $total, 'achievement' => $achievement, 'classement'=>$classement]);
         } else {
             return redirect('login');
         }
@@ -71,7 +76,8 @@ class FirstController extends Controller
         if (Auth::check()) {
             $missions = Mission::all();
             $points = Score::whereRaw("idUser=" . Auth::user()->id . "")->get();
-            return view('adventure', ['missions' => $missions, 'points' => $points]);
+            $couleur = FirstController::couleur();
+            return view('adventure', ['missions' => $missions, 'points' => $points, 'couleur'=>$couleur]);
         } else {
             return redirect('login');
         }
@@ -87,25 +93,61 @@ class FirstController extends Controller
         }
     }
 
-    public function classement() {
+    public function couleur(){
+        $couleurs = '';
+        foreach(Mission::all() as $mission){
+            $missionav = Score::whereRaw('idMission='.$mission->id - 1)->whereRaw("idUser=".Auth::user()->id)->get();
+            if(Auth::user()->progression >= $mission->id){
+                $m = Score::whereRaw('idMission='.$mission->id)->whereRaw("idUser=".Auth::user()->id)->get();
+                if($m[0]->reussie !== 0){
+                    $couleurs = $couleurs . "<a id=mission".$mission->id ." href=/mission/".$mission->id .">". $mission->nom."<div class='point jaune'></div></a>";
+                } else {
+                    $couleurs = $couleurs . "<a id=mission".$mission->id ." href=/mission/".$mission->id .">". $mission->nom."<div class='point rouge'></div></a>";
+                }
+            } elseif(count($missionav) != 0 or $mission->id == 1) {
+                $couleurs = $couleurs . "<a id=mission".$mission->id ." href=/mission/".$mission->id .">". $mission->nom."<div class='point bleu'></div></a>";
+            } else {
+                $couleurs = $couleurs . "<a id=mission".$mission->id .">???<div class='point violet'></div></a>";
+            }
+        }
+        return $couleurs;
+    }
+
+
+    public function classement()
+    {
         $users = [];
         $totaux = [];
-        foreach (User::all() as $user){
+        foreach (User::all() as $user) {
             array_push($users, [$user->id, Score::whereRaw("idUser=" . $user->id)->get()]);
         }
         $calcul = 0;
         foreach ($users as $u) {
-            foreach ($u[1] as $mission){
+            foreach ($u[1] as $mission) {
                 $calcul += $mission->rapidite + $mission->reussite + $mission->bonus;
             }
             array_push($totaux, [$u[0], $calcul]);
             $calcul = 0;
         }
         $best = [];
-        foreach($totaux as $u){
+        foreach ($totaux as $u) {
             array_push($best, $u[1]);
         }
-        dd($best);
-        
+        rsort($best);
+        $position = 0;
+        foreach ($best as $v) {
+            if (!isset($before) or $before != $v)
+                $position += 1;
+            foreach ($totaux as $u) {
+                if ($v == $u[1] and $u[0] == Auth::user()->id) {
+                    $before = $v;
+                    if($position == 1 or $position == 0){
+                        return 1 ."er";
+                    } else {
+                        return $position . "ème";
+                    }
+                }
+            }
+        }
     }
 }

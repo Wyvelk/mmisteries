@@ -26,7 +26,7 @@
         <div id='login-team'>
             @auth
             <div>
-                <a href=''><img src='/uploads/profil.png'></a>
+                <a href='/equipe'><img src='/uploads/profil.png'></a>
                 <span id="nom">{{ Auth::user()->name }}</span>
             </div>
             <a href='/signout'><img src='/uploads/logout.png'></a>

@@ -13,9 +13,9 @@
         @for ($i = 0; $i <= Auth::user()->progression; $i++)
             <div>
                 @if (isset($points[$i]))
-                    <h3 class='reussi'>{{ $missions[$i]->nom }}</h3>
+                <h3 class='reussi'>Mission {{$i}} ~ {{ $missions[$i]->nom }}</h3>
                 @else
-                    <h3 class='encours'>{{ $missions[$i]->nom }}</h3>
+                <h3 class='encours'>Mission {{$i}} ~ {{ $missions[$i]->nom }}</h3>
                 @endif
                 <p>@if($missions[$i] == $missions[0])
                     {{ Auth::user()->name }}, <?php echo substr($missions[$i]->description, 0, 280); ?><br /><br />
@@ -51,13 +51,7 @@
 
     </div>
     <div class='barre-progression'>
-        <a href='mission/1'>Début de l'aventure<div class='point'></div></a>
-        <a id='etudiant' href='#'>L'étudiant disparu<div class='point' ></div></a>
-        <a id='portail' href='#'>Le portail<div class='point' ></div></a>
-        <a id='creature' href='#'>La créature<div class='point' ></div></a>
-        <a id='arme' href='#'>L'arme<div class='point' ></div></a>
-        <a id='boussole' href='#'>La boussole<div class='point' ></div></a>
-        <a id='fin' href='#'>Fin<div class='point' ></div></a>
+        <?php echo $couleur; ?>
         <div class='progression'>
 
         </div>

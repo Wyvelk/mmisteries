@@ -102,7 +102,7 @@
     background-color: black;
     width: 20px;
     border-radius: 10px;
-    height: 2000px;
+    height: 2500px;
     z-index: 0;
     margin-top: 4em;
     position: relative;
@@ -110,7 +110,7 @@
 }
 
 .barre-progression a{
-    width: 300px;
+    width: 400px;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -121,7 +121,6 @@
 }
 
 .point{
-    background-color: #411355;
     height: 40px;
     width: 40px;
     border: 7px solid black;
@@ -143,35 +142,59 @@
     border: 4px solid black;
 }
 
+.jaune{
+    background-color: #f0c600;
+}
 
+.bleu{
+    background-color: #31667c;
+}
 
-#etudiant{
-    top: 30%;
+.rouge{
+    background-color: #e23e30;
+}
+
+.violet{
+    background-color: #411355;
+}
+
+#mission2{
+    top: 20%;
     z-index: 0;
 
 }
 
-#portail{
+#mission3{
+    top: 40%;
+
+}
+
+#mission4{
     top: 50%;
 
 }
 
-#creature{
-    top: 60%;
+#mission5{
+    top: 65%;
 
 }
 
-#arme{
-    top: 75%;
+#mission6{
+    top: 78%;
 
 }
 
-#boussole{
+#mission7{
+    top: 85%;
+
+}
+
+#mission8{
     top: 90%;
 
 }
 
-#fin{
+#mission9{
     top: 99%;
 
 }

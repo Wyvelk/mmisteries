@@ -7,7 +7,7 @@
 
 @section('content')
 <section class='mission'>
-    <h2>{{$mission[0]->nom}}</h2>
+    <h2>Mission {{$mission[0]->id - 1}} ~ {{$mission[0]->nom}}</h2>
     
     <div>
         <div class='infos'>
