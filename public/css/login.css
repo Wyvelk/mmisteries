@@ -68,20 +68,22 @@ input{
     
 }
 
-.message{
+#message{
     font-family: "poppins";
     margin:1rem;
     border-radius: 10px;
     border:none;
     padding: 0.5em;
+    max-width: 93%;
     height: 15rem;
+    max-height: 15rem;
 }
 
 .bouton{
     margin: 0 auto;
     padding: 0;
     background: none;
-    width: 25%;
+    width: 27%;
     transition: 0.5s;
     font-family: 'poppins';
     font-weight: bold;

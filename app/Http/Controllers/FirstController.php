@@ -76,8 +76,9 @@ class FirstController extends Controller
         if (Auth::check()) {
             $missions = Mission::all();
             $points = Score::whereRaw("idUser=" . Auth::user()->id . "")->get();
+            $prog = Auth::user()->progression;
             $couleur = FirstController::couleur();
-            return view('adventure', ['missions' => $missions, 'points' => $points, 'couleur'=>$couleur]);
+            return view('adventure', ['progression'=>$prog, 'missions' => $missions, 'points' => $points, 'couleur'=>$couleur]);
         } else {
             return redirect('login');
         }

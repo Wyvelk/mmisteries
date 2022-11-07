@@ -45,6 +45,10 @@
     background-color: #f0c600;
 }
 
+.rate::after{
+    background-color: #e23e30;
+}
+
 .aventure h3:hover::after{
     left: 25%;
     transition: 0.5s;
@@ -69,6 +73,10 @@
 
 .text div div h4{
     margin-left: 0;
+}
+
+.text > p{
+    margin-bottom: 3em;
 }
 
 .text div div p{
@@ -161,7 +169,6 @@
 #mission2{
     top: 20%;
     z-index: 0;
-
 }
 
 #mission3{
@@ -205,8 +212,10 @@
     margin-top: 20px;
     border: 3px solid black;
     border-radius: 10px;
-    height: 400px;
+
 }
+
+
 
 #yellow{
     color: #f0c600;
@@ -226,7 +235,13 @@
     transition: 0.3s;
 }
 
-#yellow:hover, #purple:hover, #blue:hover{
+#red{
+    color: #e23e30;
+    font-size: large;
+    transition: 0.3s;
+}
+
+#yellow:hover, #purple:hover, #blue:hover, #red:hover{
     letter-spacing: 1px;
     transition: 0.3s;
 }

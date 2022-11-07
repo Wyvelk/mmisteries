@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+<link href='/css/start.css' rel='stylesheet'>
+@endsection
 @section('content')
-<section class = 'equipe'>
+<section class = 'start'>
     <div class='profil'>
         <img>
         <div>
