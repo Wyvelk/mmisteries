@@ -167,7 +167,7 @@
     height: 50px;
     font-size: xx-large;
     text-align: center;
-    margin-top: 5em;
+    margin-top: 2em;
     border: none;
     border-radius: 25px;
 }
@@ -180,4 +180,11 @@
     transform: rotateY(180deg);
     top: -120px;
     z-index: -1;
+}
+
+.enigmes label{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2em;
 }

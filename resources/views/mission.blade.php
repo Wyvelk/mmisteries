@@ -53,7 +53,13 @@
                 </div>@if($mission[0]->id == 1)
 
                 <form>
+                    <label>Une fois le téléphone trouvé, résolvez l'éngime qui se cache avec lui en tapant votre réponse ci-dessous.</label>
                     <input type='text' placeholder='Entrez le mot-code'>
+                </form>
+                @elseif($mission[0]->id == 2)
+                <form>
+                    <label>Le mot de passe de la salle se cache derrière la différence.</label>
+                    <input type='text' placeholder='Entrez le mot de passe'>
                 </form>
                 @endif
             </div>
