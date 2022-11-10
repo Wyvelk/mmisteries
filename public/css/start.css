@@ -1,4 +1,4 @@
-.start{
+.start {
     display: flex;
     background-image: url('/uploads/fond.jpg');
     background-size: cover;
@@ -8,27 +8,27 @@
     color: white;
 }
 
-.video{
+.video {
     flex-basis: 60%;
     background-color: black;
     margin: 2em;
 }
 
-.join{
+.join {
     margin: 2em;
-    margin-right:0;
+    margin-right: 0;
     flex-basis: 40%;
     position: relative;
 }
 
-.join h3{
+.join h3 {
     font-size: 2vw;
     font-family: treenightregular;
     letter-spacing: 4px;
     margin-top: 2em;
 }
 
-.join a{
+.join a {
     background-color: #f3d521;
     border: none;
     padding: 1em;
@@ -45,13 +45,13 @@
     transition: 0.3s;
 }
 
-.join p{
+.join p {
     text-align: center;
     margin-top: 1em;
     font-weight: bold;
 }
 
-.join a:hover{
+.join a:hover {
     letter-spacing: 3px;
     transition: 0.3s;
 }
