@@ -1,40 +1,183 @@
 .mission{
     margin: 3em;
+
 }
 
 .mission h2{
     color: black;
     font-size: 4rem;
+    margin-left: 2%;
 }
+
+.terminer a{
+    background-color: #31667c;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    width: 230px;
+    border-radius: 20px;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.bottom{
+    flex-grow: 1;
+}
+
+.terminer{
+    display: flex;
+    justify-content: right;
+}
+
+.terminer a:hover{
+    letter-spacing: 1px;
+    color: #eae655;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#abandon{
+    background-color: #e23e30;
+}
+
 
 .infos{
     background-color: #eae655;
     flex-basis: 30%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 500px;
-    margin: 0;
+    animation: apparition 1s ease-out;
+    margin-top: 0.5em;
+    min-height:50vh;
+    flex-direction: column;
+    display: flex;
     color: white;
-    text-transform: uppercase;
     text-align: center;
     font-size: x-large;
 }
 
+.infos h3{
+    margin: 0.5em;
+    text-transform: uppercase;
+}
+
+.infos a{
+    text-decoration: none;
+    color: #31667c
+}
+
+.infos h4{
+    font-size: small;
+    color: black;
+    transition: 0.3s;
+}
+
+.infos > p{
+    font-size: small;
+    text-align: left;
+    padding: 1em;
+    color: black;
+}
+
+.infos h4:hover{
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.infos i{
+    font-size: small;
+}
+
+@keyframes apparition{
+    from{
+        opacity: 0;
+        margin-right: 3em;
+    }
+
+    to{
+        opacity: 100%;
+        margin-right: 0;
+    }
+}
+
+.infos div p{
+    color: black;
+    padding-bottom: 0.5em;
+}
+
 .mission > div{
     display: flex;
-    margin: 0;
     margin-top: 0.5em;
+    margin: 0 auto;
 }
 
 .enigmes{
     flex-basis: 65%;
+    position: relative;
 }
 
-.enigmes div{
-    background-image: url('../uploads/fond.jpg');
+.enigmes h3{
+    margin: 0.5em;
+}
+
+.enigmes > div{
+    background-image: url('../uploads/brown-texture.jpg');
     background-size: cover;
     border: 20px solid #eae655;
     height: 481.27px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.enigmes form{
+    margin-top: 3em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.enigmes img{
+    width: 40%;
+}
+
+.postit{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    margin: 1em;
+}
+
+.postit div{
+    transition: 0.5s;
+    
+}
+
+.postit div:hover{
+    transform: rotate(5deg) translateY(20px);
+    transition: 0.5s;
+}
+
+
+.enigmes input{
+    width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 50px;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 5em;
+    border: none;
+    border-radius: 25px;
+}
+
+.enigmes > img{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    transform: rotateY(180deg);
+    top: -120px;
+    z-index: -1;
 }

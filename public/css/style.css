@@ -53,15 +53,15 @@ header{
 
 #login-team{
     position: absolute;
-    display: flex;
     right: 5%;
     height: auto;
     width: 10%;
+    display: flex;
 }
 
 #login-team div{
-    flex-direction: column;
     display: flex;
+    
 }
 
 #login-team img{
@@ -70,12 +70,16 @@ header{
 
 }
 
+#login-team div a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
 #login-team span{
     color: white;
     font-size: 1vw;
 }
-
-
 
 header > div{
     text-align: center;

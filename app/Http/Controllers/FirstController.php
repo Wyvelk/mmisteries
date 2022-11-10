@@ -84,16 +84,6 @@ class FirstController extends Controller
         }
     }
 
-    public function mission($id)
-    {
-        if (Auth::check()) {
-            $mission = DB::select('select * from missions where id = ?', [$id]);
-            return view('mission', ['mission' => $mission]);
-        } else {
-            return redirect('login');
-        }
-    }
-
     public function couleur(){
         $couleurs = '';
         foreach(Mission::all() as $mission){
