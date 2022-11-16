@@ -1,0 +1,19 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.chapitre{
+    margin-top: 3em;
+}
+
+.chapitre h3{
+    font-family: treenightregular;
+    font-size: xx-large;
+}
+
+.chapitre p{
+    width: 50%;
+    line-height: 1.3;
+    margin: 0;
+}

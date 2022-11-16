@@ -9,7 +9,7 @@
 <section class='start'>
     <div class='video'></div>
     <div class='join'>
-        <h3>L'IUT n'est pas ce que vous imaginez...</h3>
+        <h3>L'IUT n'est pas ce que vous croyez...</h3>
 
         @auth
         <p>Début de l'aventure</p>

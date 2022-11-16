@@ -20,6 +20,7 @@ Route::get('/', [FirstController::class, 'start']);
 Route::get('/accueil', [FirstController::class, 'accueil']);
 Route::get('/adventure', [FirstController::class, 'adventure']);
 Route::get('/equipe', [FirstController::class, 'equipe']);
+Route::get('/journal', [FirstController::class, 'journal']);
 Route::get('/mission/{id}', [MissionController::class, 'mission'])-> where('id', '[0-9]+');
 
 Route::get('classement', [FirstController::class, 'classement']);

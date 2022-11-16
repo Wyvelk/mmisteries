@@ -3,8 +3,9 @@
     background-image: url('/uploads/fond.jpg');
     background-size: cover;
     width: 100%;
+    min-height: 80vh;
     margin: 0;
-    height: 80vh;
+    flex-grow: 1;
     color: white;
 }
 

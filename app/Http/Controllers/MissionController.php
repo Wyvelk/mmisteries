@@ -18,7 +18,8 @@ class MissionController extends Controller
                 $mission = Mission::whereRaw("id=".$id)->get();
                 $reussi = MissionController::reussi($id);
                 $dispo = MissionController::points_dispo($id);
-                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo]);
+                $indice = MissionController::indice($id);
+                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice]);
             } else {
                 return redirect('login');
             }
@@ -57,6 +58,29 @@ class MissionController extends Controller
                 array_push($reussite, $user);
         }
         return count($reussite);
+    }
+
+    public function indice($id){
+        $indice = Mission::whereRaw("id=".$id)->get();
+        $mission3 = Score::whereRaw("idMission = 3")->whereRaw("reussie=1")->whereRaw("idUser=".Auth::user()->id)->get();
+        $mission4 = Score::whereRaw("idMission = 4")->whereRaw("reussie=1")->whereRaw("idUser=".Auth::user()->id)->get();
+        $indices = [$indice[0]->indice1];
+        if(Auth::user()->progression < 3){
+            return $indices;
+        } else{
+                if(count($mission3) == 0 and count($mission4) == 0){
+                } elseif(count($mission3) != 0 and count($mission4) == 0){
+                    array_push($indices, $indice[0]->indice2);
+                    return $indices;
+                } elseif(count($mission3) == 0 and count($mission4) != 0){
+                    array_push($indices, $indice[0]->indice2);
+                    return $indices;
+                } else {
+                    array_push($indices, $indice[0]->indice2);
+                    array_push($indices, $indice[0]->indice3);
+                    return $indices;
+                }
+        }
     }
 
 

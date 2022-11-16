@@ -6,7 +6,10 @@
 
 @section('content')
 <section class='start'>
-    <div class='video'></div>
+    <video class='video' width="250" loop autoplay>
+    <source src="/uploads/final_1.mp4"
+            type="video/mp4">
+    </video>
     <img class='arbre' src='/uploads/arbre.png' alt='image arbre'>
 </section>
 
@@ -63,5 +66,5 @@
 </section>
 
 
-<script type="text/javascript" src="/js/decompte.js"></script>
+
 @endsection('content')

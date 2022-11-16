@@ -39,7 +39,7 @@
         </div>
         <nav>
             <a href='/accueil'>Accueil</a>
-            <a>Journal</a>
+            <a href='/journal'>Journal</a>
             <a href='/adventure'>Aventure</a>
             <a href='/contact'>Contact</a>
         </nav>

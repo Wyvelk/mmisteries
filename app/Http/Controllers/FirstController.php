@@ -22,27 +22,9 @@ class FirstController extends Controller
         return view('login');
     }
 
-    public function loginT()
-    {
-    }
-
     public function register()
     {
         return view('register');
-    }
-
-    public function registerT()
-    {
-        $noms = DB::select("select nom from equipes");
-        foreach ($noms as $v) {
-            if ($v == $_POST['login']) {
-                return redirect('register');
-            }
-        }
-        DB::select("insert into `equipes`(`nom`, `slogan`, `score`, `password`, `instagram`) VALUES (?, ?, 0, ?, ?)", [$_POST['login'], $_POST['slogan'], sha1($_POST['pass']), $_POST['insta']]);
-        Session::put('login', $_POST['login']);
-        $login = Session::get('login');
-        return view('start', ['login' => $login]);
     }
 
     public function contact()
@@ -52,6 +34,10 @@ class FirstController extends Controller
 
     public function equipe() {
         return view('equipe');
+    }
+
+    public function journal() {
+        return view('story');
     }
 
     public function accueil()
