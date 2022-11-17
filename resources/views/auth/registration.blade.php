@@ -18,6 +18,8 @@
         @endif
         <label for="slogan">Votre slogan</label>
         <input type='text' placeholder='Slogan' name='slogan'>
+        <label for="pdp">Votre photo d'équipe</label>
+        <input type='file' name='img_url'>
         <label for="password">Mot de passe</label>
         <input type="password" placeholder="Mot de passe" id="password" class="form-control" name="password" required>
         @if ($errors->has('password'))

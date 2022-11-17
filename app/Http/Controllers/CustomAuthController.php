@@ -51,11 +51,12 @@ class CustomAuthController extends Controller
             'password' => 'required|min:4',
             'email' => 'required',
         ]);
+        dd($request['img_url']);
         $data = $request->all();
         $verif = DB::select("select name from users where name = ?", [$data['name']]);
         if($verif == NULL){
             $this->create($data);
-            $credentials = $request->only('name', 'email', 'password');
+            $credentials = $request->only('name', 'email', 'img_url', 'password');
         
             if (Auth::attempt($credentials)) {
                 return redirect()->intended('/')

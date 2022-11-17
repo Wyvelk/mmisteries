@@ -19,7 +19,7 @@
     détresse de ce hurlement, elle reconnut la voix de Tim avec qui elle avait déjà pu échanger et chercha la provenance du bruit qui pourtant semblait venir de si près d'elle. Tous les étudiants étaient 
     pourtant rentrés chez eux, et elle ne trouva plus personne nulle part dans l'IUT. Mme Hayenne resta perturbée et n'attendit guère longtemps avant d'en parler aux autres professeurs, en classant cette affaire 
     de secrète. <br /><br />Après de nombreux débats sur l'importance de l'événement qui s'était produit, cette affaire reste à ce jour toujours dissimulée et cherche encore à être réglée.
-    Les autres professeurs et gérant de l'établissement laissèrent de côté cette histoire bien que tous restait d'accord sur un point crucial :
+    Les autres professeurs et gérant de l'établissement laissèrent de côté cette histoire bien que tous restaient d'accord sur un point crucial :
     un phénomène paranormal venait de se produire au sein de l'établissement...
 </p>
 </div>

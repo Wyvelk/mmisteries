@@ -12,15 +12,63 @@
     margin: 4em;
 }
 
-.points{
+.equipe > div > h3{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.recap{
+    display: flex;
+}
+
+.points, .classement{
     display: flex;
     align-items: center;
+    background-color: #f3D521;
+    border-radius: 30px;
+    flex-basis: 50%;
+    padding: 0.5em;
+    margin: 0.5em;
 }
+
+.classement div div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.classement div div p{
+    line-height: 2;
+    margin: 0;
+}
+
+
 
 .points svg, .points div{
     margin: 0;
 }
 
-.points div h3{
-    font-size: 4rem;
+.points div p{
+    line-height: 1.5;
+    font-size: x-large;
+}
+
+.points div h2{
+    text-align: right;
+    width: 100%;
+}
+
+.classement h2{
+    font-size: 2vw;
+    margin: 0;
+}
+
+.classement div p{
+    margin: 1em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.points div h3, .classement h3{
+    font-size: 2.5vw;
+    margin-bottom: 0.5em;
 }

@@ -23,10 +23,17 @@
             </p>
             @elseif($mission[0]->id == 2)
             <p><strong>Description</strong><br /><br />
-                Tim est en danger, des monstres rôdent dans les couloirs et menaçent de le dévorer. Les frappements sur la porte de la salle 100F seraient les coups de Tim
+                Tim est en danger, des monstres rôdent dans les couloirs et menaçent de le dévorer. Les frappements sur la porte de la salle 103F seraient les coups de Tim
                 qui ne parvient pas à y entrer pour se cacher... Dans sa dimension, cette est fermée à clé et un mot de passe est nécessaire pour l'ouvrir.<br /><br />
                 Cette pièce possède une forte connexion avec notre monde et si Tim parvient à y entrer, vous pourrez peut-être réussir à communiquer plus facilement avec lui.
                 Mais il vous faut lui partager le bon code... Cherchez bien et ouvez l'oeil, la réponse pourrait bien être sous vos yeux...
+            </p>
+            @elseif($mission[0]->id == 3)
+            <p><strong>Description</strong><br /><br />
+                Les coups ont cessé, tout comme les rugissements. Vous avez permis à Tim d'être en sécurité pour un temps. La prochaine étape est de communiquer avec Tim plus facilement, afin de percer le mystère planant depuis
+                le début de cette enquête : que lui est-il vraiment arrivé ?<br /><br />
+                Tim se trouve actuellement en salle 103F et cherche à vous parler sérieusement. Rendez-vous sur le lieu en question pour y trouver une piste, et y rétablir une 
+                communication plus poussée. En réussissant, Tim pourra vous parler plus vite et vous gagnerez la possibilité d'obtenir un indice supplémentaire à vos missions.
             </p>
             @endif
             <div class='bottom'></div>
@@ -63,22 +70,32 @@
                             <p>???</p>
                         </div>
                     </div>
-                    <div class='resolution'>@if($mission[0]->id == 1)
-
+                    @if($mission[0]->id == 1)
+                    <div id="m1" class='resolution'>
                         <form>
                             <label>Une fois le téléphone trouvé, résolvez l'éngime qui se cache avec lui en tapant votre réponse ci-dessous.</label>
                             <input type='text' placeholder='Entrez le mot-code'>
                         </form>
-                        @elseif($mission[0]->id == 2)
+                    </div>
+                    @elseif($mission[0]->id == 2)
+                    <div id="m2" class='resolution'>
                         <img src='/uploads/affiche.jpg'>
                         <form>
                             <label>Ayez le sens du détail et le mot de passe se révélera à vous.</label>
                             <input type='text' placeholder='Entrez le mot de passe' value='4BA6C1'>
                         </form>
-                        @endif
                     </div>
+                    @elseif($mission[0]->id == 3)
+                    <div id="m3" class='resolution'>
+                        <img id='m3' src='/uploads/mission3.png'>
+                        <form>
+                            <input type='text' placeholder='Entrez la solution'>
+                        </form>
+                    </div>
+                    @endif
             </div>
         </div>
+    </div>
     </div>
     <div class='terminer'>
         <a id='abandon' href='#'>Abandonner</a>
@@ -106,14 +123,18 @@
 
         if (nombreindices.length >= 2) {
             indice2.ondblclick = function() {
-                indice2.innerHTML = <?php if(isset($indice[1])){ echo json_encode($indice[1]);} ?>
+                indice2.innerHTML = <?php if (isset($indice[1])) {
+                                        echo json_encode($indice[1]);
+                                    } ?>
                 document.getElementById('dispo').innerHTML = n - pointsbonus * 0.3
             };
         }
 
         if (nombreindices.length == 3) {
             indice3.ondblclick = function() {
-                indice3.innerHTML = <?php if(isset($indice[2])){ echo json_encode($indice[2]);} ?>
+                indice3.innerHTML = <?php if (isset($indice[2])) {
+                                        echo json_encode($indice[2]);
+                                    } ?>
                 document.getElementById('dispo').innerHTML = n - pointsbonus * 0.5
             };
         }

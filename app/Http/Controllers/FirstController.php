@@ -33,7 +33,13 @@ class FirstController extends Controller
     }
 
     public function equipe() {
-        return view('equipe');
+        $points = Score::whereRaw("idUser=" . Auth::user()->id . "")->get();
+            $total = 0;
+            for ($i = 0; $i < count($points); $i++) {
+                $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
+            }
+        $classement = FirstController::classement();
+        return view('equipe', ['total'=>$total, 'classement'=>$classement]);
     }
 
     public function journal() {

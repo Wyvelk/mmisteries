@@ -14,7 +14,7 @@ class MissionController extends Controller
 {
     public function mission($id)
         {
-            if (Auth::check()) {
+            if (Auth::check() and Auth::user()->progression + 1 >= $id) {
                 $mission = Mission::whereRaw("id=".$id)->get();
                 $reussi = MissionController::reussi($id);
                 $dispo = MissionController::points_dispo($id);

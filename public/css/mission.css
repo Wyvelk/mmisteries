@@ -5,7 +5,7 @@
 
 .mission h2{
     color: black;
-    font-size: 4rem;
+    font-size: 4vw;
     margin-left: 2%;
 }
 
@@ -133,21 +133,13 @@
     width: 40%;
 }
 
-.resolution{
-    display: flex;
-}
-
-.resolution img{
-    width: 20%;
-    height: auto;
-}
-
 .postit{
     display: flex;
     justify-content: space-between;
     text-align: center;
     position: relative;
     margin: 1em;
+    
 }
 
 .postit div{
@@ -162,18 +154,6 @@
     transition: 0.5s;
 }
 
-
-.enigmes input{
-    width: 75%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 50px;
-    font-size: xx-large;
-    text-align: center;
-    margin-top: 2em;
-    border: none;
-    border-radius: 25px;
-}
-
 .enigmes > img{
     width: 200px;
     height: auto;
@@ -184,9 +164,42 @@
     z-index: -1;
 }
 
-.enigmes label{
+#m1 input, #m2 input, #m3 input{
+    width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 50px;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 2em;
+    border: none;
+    border-radius: 25px;
+}
+
+#m1 label, #m2 label{
     color: white;
     font-weight: bold;
     text-transform: uppercase;
     padding: 2em;
+}
+
+#m2 img{
+    width: 180px;
+    height: 255px;
+    margin-left: 1.5em;
+}
+
+#m1, #m2, #m3{
+    display: flex; 
+}
+
+#m3{
+    flex-direction: column;
+}
+
+#m3 input{
+    margin-top: -1em;
+}
+
+#m3 img{
+    width: 40%;
 }

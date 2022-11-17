@@ -9,7 +9,7 @@
         @csrf
         <label for="username">Nom de l'équipe</label>
         <input type="text" id="login" name="login" placeholder="Nom de l'équipe" required='required'>
-        <label for="objet">Objet (question, indices, ...)</label>
+        <label for="objet">Objet (problèmes techniques, ...)</label>
         <input type="text" id="objet" name="objet" placeholder="Objet" required="required">
         <textarea id="message" name="message" placeholder="Votre message..." wrap="hard" required="required"></textarea>
         <input type="submit" class="bouton" value="Envoyer">
