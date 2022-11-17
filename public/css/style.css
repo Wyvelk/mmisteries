@@ -68,6 +68,7 @@ header {
 #login-team img{
     width: 60px;
     height: auto;
+    margin: auto;
 
 }
 
@@ -125,6 +126,7 @@ header img {
 .menu-nav{
     width: 50%;
     height: auto;
+    margin: auto;
 }
 
 
