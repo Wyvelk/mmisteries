@@ -60,6 +60,7 @@
 .join > div{
     display: flex;
     margin-top: 2em;
+    justify-content: space-around;
 }
 
 .join div div{
@@ -71,5 +72,5 @@
     font-weight: lighter;
     font-size: xx-large;
     font-family: treenightregular;
-    
+
 }
