@@ -6,37 +6,10 @@
 .mission h2{
     color: black;
     font-size: 4vw;
-    margin-left: 2%;
+    margin: 0;
 }
 
-.terminer a{
-    background-color: #31667c;
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-    text-align: center;
-    margin: 1em;
-    width: 230px;
-    border-radius: 20px;
-    font-size: large;
-    transition: 0.3s;
-}
 
-.bottom{
-    flex-grow: 1;
-}
-
-.terminer{
-    display: flex;
-    justify-content: right;
-}
-
-.terminer a:hover{
-    letter-spacing: 1px;
-    color: #eae655;
-    transition: 0.3s;
-    font-weight: bold;
-}
 
 #abandon{
     background-color: #e23e30;
@@ -49,7 +22,6 @@
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin-top: 0.5em;
-    min-height:50vh;
     flex-direction: column;
     display: flex;
     color: white;
@@ -66,6 +38,10 @@
     text-transform: uppercase;
 }
 
+.infos h2{
+    font-size: 40px;
+}
+
 .infos a{
     text-decoration: none;
     color: #31667c
@@ -74,13 +50,16 @@
 .infos h4{
     font-size: small;
     color: black;
+    margin: 0;
     transition: 0.3s;
 }
 
 .infos > p{
     font-size: small;
     text-align: left;
+    flex-grow: 1;
     padding: 1em;
+    margin: 0;
     color: black;
 }
 
@@ -96,16 +75,44 @@
 .infos div p{
     color: black;
     padding-bottom: 0.5em;
+    margin: 0;
 }
 
-.mission > div{
+.tableau{
     display: flex;
     margin-top: 0.5em;
+    justify-content: space-between;
     margin: 0 auto;
 }
 
+.terminer a{
+    background-color: #31667c;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+    width: 230px;
+    border-radius: 20px;
+    font-size: large;
+    transition: 0.3s;
+}
+
+
+.terminer{
+    display: flex;
+    justify-content: right;
+}
+
+.terminer a:hover{
+    letter-spacing: 1px;
+    color: #eae655;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
 .enigmes{
-    flex-basis: 65%;
+    flex-basis: 68%;
     position: relative;
 }
 
@@ -123,7 +130,7 @@
 }
 
 .enigmes form{
-    margin-top: 3em;
+    margin-top: 1em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -164,12 +171,13 @@
     z-index: -1;
 }
 
-#m1 input, #m2 input, #m3 input{
+#m1 input, #m2 input, #m3 input, #m4 input{
     width: 75%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 50px;
     font-size: xx-large;
     text-align: center;
+    margin: 0 auto;
     margin-top: 2em;
     border: none;
     border-radius: 25px;
@@ -189,7 +197,8 @@
 }
 
 #m1, #m2, #m3{
-    display: flex; 
+    display: flex;
+    justify-content: center;
 }
 
 #m3{
@@ -202,4 +211,26 @@
 
 #m3 img{
     width: 40%;
+    margin: 0 auto;
+}
+
+#m4{
+    text-align: center;
+    margin-top: 3em;
+}
+
+#m4 a{
+    text-decoration: none;
+    background-color: #eae655;
+    color: white;
+    padding: 1em;
+    font-size: large;
+    border-radius: 20px;
+    margin-top: 6em;
+    transition: 0.3s;
+}
+
+#m4 a:hover{
+    letter-spacing: 1px;
+    transition: 0.3s;
 }

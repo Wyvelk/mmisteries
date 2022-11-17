@@ -13,6 +13,7 @@
     max-width: 20%;
     width: auto;
     height: auto;
+    margin: 0 auto;
     margin-top: 2em;
 }
 
@@ -23,7 +24,6 @@
 }
 
 .avancee{
-    width: 100%;
     margin-bottom: 4em;
     z-index: 1;
 }
@@ -35,15 +35,15 @@
     letter-spacing: 2px;
     background-color: #411355;
     padding: 0.5em;
-    width: 45%;
     margin-left: 55%;
+    overflow: hidden;
     border-radius: 50px 0 0 50px;
 }
 
 .equipe{
     display: flex;
-    width: 90%;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
     margin-top: 5em;
 }
 
@@ -53,9 +53,9 @@
 }
 
 .equipe h3{
-    font-size: 3rem;
+    font-size: 2rem;
+    padding-left: 1em;
     text-align: center;
-    padding-top: 1em;
 }
 
 .equipe i{
@@ -85,12 +85,14 @@
 .bandeau h4{
     color: white;
     padding: 1em;
+    margin: 0;
     font-size: x-large;
 }
 
 .bandeau h3{
     font-size: xx-large;
     transition: 1s;
+    margin: 0;
     padding: 1em;
 }
 
@@ -120,10 +122,6 @@
 .bandeau div img{
     width: 80px;
     height: auto;
-}
-
-.recompenses{
-    width: 100%;
 }
 
 .recompenses h1{

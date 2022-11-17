@@ -1,5 +1,3 @@
-
-
 <footer>
     <div>
         <h3>Retrouvez-nous sur</h3>

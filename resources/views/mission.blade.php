@@ -9,7 +9,7 @@
 <section class='mission'>
     <h2 id='titre' data-label="Mission {{$mission[0]->id - 1}} ~ {{$mission[0]->nom}}"></h2>
 
-    <div>
+    <div class = 'tableau'>
         <div class='infos'>
             <h3>Informations</h3>
             <h4><a href='/journal'>Chapitre {{$mission[0]->id}}</a> à lire avant de commencer cette mission !</h4>
@@ -32,11 +32,15 @@
             <p><strong>Description</strong><br /><br />
                 Les coups ont cessé, tout comme les rugissements. Vous avez permis à Tim d'être en sécurité pour un temps. La prochaine étape est de communiquer avec Tim plus facilement, afin de percer le mystère planant depuis
                 le début de cette enquête : que lui est-il vraiment arrivé ?<br /><br />
-                Tim se trouve actuellement en salle 103F et cherche à vous parler sérieusement. Rendez-vous sur le lieu en question pour y trouver une piste, et y rétablir une 
+                Tim se trouve actuellement en salle 103F et cherche à vous parler sérieusement. Rendez-vous sur le lieu en question pour y trouver une piste, et y rétablir une
                 communication plus poussée. En réussissant, Tim pourra vous parler plus vite et vous gagnerez la possibilité d'obtenir un indice supplémentaire à vos missions.
             </p>
+            @elseif($mission[0]->id == 4)
+            <p><strong>Description</strong><br /><br />
+                Tim reste hors de danger pour le moment. Mais parler avec lui reste tout de même encore compliqué, bien que la salle 103F soit adaptée. Quelque chose d'étrange brouille les pistes et détriore la qualité de communication.<br /><br />
+                Trouvez l'amplificateur d'ondes et informez Tim de sa position pour communiquer avec lui. En réussissant, Tim pourra vous envoyer sa vidéo et vous gagnerez la possibilité d'obtenir un dernier indice supplémentaire...
+            </p>
             @endif
-            <div class='bottom'></div>
             <div>
                 <h2 id='dispo'>100</h2>
                 <p>POINTS ENCORE DISPONIBLES</p>
@@ -90,6 +94,13 @@
                         <img id='m3' src='/uploads/mission3.png'>
                         <form>
                             <input type='text' placeholder='Entrez la solution'>
+                        </form>
+                    </div>
+                    @elseif($mission[0]->id == 4)
+                    <div id="m4" class='resolution'>
+                        <a href="/uploads/unknown.zip" download="Unknown.zip">Télécharger</a>
+                        <form>
+                            <input type='text' placeholder="Où se trouve l'amplificateur ?">
                         </form>
                     </div>
                     @endif
