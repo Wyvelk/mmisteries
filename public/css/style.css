@@ -38,12 +38,12 @@ h2, h1 {
     padding-top: 2rem;
 }
 
-a:hover {
+header a:hover {
     filter: drop-shadow(0 0 0.2rem white);
     transition: 0.5s
 }
 
-a{
+header a{
     transition:0.5s;
 }
 
