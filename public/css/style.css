@@ -12,7 +12,7 @@
 
 * {
     padding: 0;
-    margin: 0 auto;
+   /* margin: 0 auto; */
     line-height: 1;
     max-width: 1900px;
     box-sizing: border-box;
@@ -24,6 +24,7 @@ body{
     display: flex;
     font-family: Poppins;
     min-height: 100vh;
+    margin:0 auto;
     flex-direction: column;
 }
 
@@ -61,7 +62,7 @@ header {
 
 #login-team div{
     display: flex;
-    
+
 }
 
 #login-team img{
@@ -106,7 +107,7 @@ nav a {
 nav a:hover{
     letter-spacing: 3px;
     transition: 0.5s;
-    
+
     font-weight: bold;
 }
 
@@ -138,7 +139,7 @@ footer {
     text-align: center;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1em;
     z-index: 1;
     background-color: #411355;
@@ -147,6 +148,9 @@ footer {
 
 footer img {
     width: 80px;
-    margin: 1em;
+    /* margin: 1em; */
 }
 
+footer>div {
+    padding: 0 2rem;
+}
