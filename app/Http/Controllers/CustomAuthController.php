@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 class CustomAuthController extends Controller
 {
     public function index()
@@ -46,19 +48,25 @@ class CustomAuthController extends Controller
     
     public function customRegistration(Request $request)
     {  
+        if($request->img_url != null){
+            $file = Storage::disk('public')->put('avatars', $request->img_url);
+        }
+        
         $request->validate([
             'name' => 'required',
             'password' => 'required|min:4',
             'email' => 'required',
         ]);
-        dd($request['img_url']);
         $data = $request->all();
         $verif = DB::select("select name from users where name = ?", [$data['name']]);
         if($verif == NULL){
             $this->create($data);
-            $credentials = $request->only('name', 'email', 'img_url', 'password');
+            $credentials = $request->only('name', 'email', 'password');
         
             if (Auth::attempt($credentials)) {
+                $user = User::whereRaw('id='.Auth::user()->id)->get();
+                $user[0]->img_url = $file;
+                $user[0]->save();
                 return redirect()->intended('/')
                             ->withSuccess('Signed in');
             }

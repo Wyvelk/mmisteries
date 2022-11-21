@@ -1,4 +1,4 @@
-.start {
+.accueil {
     display: flex;
     background-image: url('/uploads/fond.jpg');
     background-size: cover;
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.start img{
+.accueil img{
     max-width: 20%;
     width: auto;
     height: auto;

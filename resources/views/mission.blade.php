@@ -9,7 +9,7 @@
 <section class='mission'>
     <h2 id='titre' data-label="Mission {{$mission[0]->id - 1}} ~ {{$mission[0]->nom}}"></h2>
 
-    <div class = 'tableau'>
+    <div class='tableau'>
         <div class='infos'>
             <h3>Informations</h3>
             <h4><a href='/journal'>Chapitre {{$mission[0]->id}}</a> à lire avant de commencer cette mission !</h4>
@@ -37,8 +37,27 @@
             </p>
             @elseif($mission[0]->id == 4)
             <p><strong>Description</strong><br /><br />
-                Tim reste hors de danger pour le moment. Mais parler avec lui reste tout de même encore compliqué, bien que la salle 103F soit adaptée. Quelque chose d'étrange brouille les pistes et détriore la qualité de communication.<br /><br />
+                Tim reste hors de danger pour le moment. Mais parler avec lui reste tout de même encore compliqué, bien que la salle 103F soit adaptée. Quelque chose d'étrange brouille les pistes et détriore la qualité de communication.
+                <br /><br />
                 Trouvez l'amplificateur d'ondes et informez Tim de sa position pour communiquer avec lui. En réussissant, Tim pourra vous envoyer sa vidéo et vous gagnerez la possibilité d'obtenir un dernier indice supplémentaire...
+            </p>
+            @elseif($mission[0]->id == 5)
+            <p><strong>Description</strong><br /><br />
+                Voici ci-contre la vidéo envoyée par Tim. C'est une chance inouïe que vous l'ayez reçue ne serait-ce qu'en basse qualité. Ouvrez-la, et tentez de comprendre le message en clarifiant au mieux possible la vidéo qui a subi 
+                des modifications involontaires suite à l'envoi.
+                <br /><br />Une fois ceci fait, donnez la réponse à l'énigme qui se dissimule à l'intérieur du fichier et vous pourrez continuer de suivre le déroulement des évènements.
+            </p>
+            @elseif($mission[0]->id == 6)
+            <p><strong>Description</strong><br /><br />
+                Tim tente de suivre discrètement la créature pour savoir quel est son parcours habituel, mais le monstre ne cesse d'assombrir les couloirs et l'obscurité devient presque totale dans cette dimension. N'ayant aucune lumière
+                sous la main pour se repérer, vous devez l'aider à retrouver la tanière du monstre avant que celui-ci ne recouvre le monde de ses ténèbres.<br /><br />
+                La seule piste que vous possédez se trouve ci-contre et pourrait bien être d'une aide très précieuse, mais n'ayez pas peur du noir...
+            </p>
+            @elseif($mission[0]->id == 7)
+            <p><strong>Description</strong><br /><br />
+            Le noir est complet dans l'Autre Dimension. Tim ne peut plus se repérer qu'avec les sons de son environnement, et vous ne pourrez l'aider qu'ainsi aussi, désormais. L'arme parfaite pour tuer le monstre se trouverait là où une lumière 
+            puissante brille. <br /><br />Rendez-vous à l'heure et emplacement exacts pour tenter de révéler cet endroit. Attention, si vous êtes en retard, il n'y aura pas de seconde chance, vous n'avez pas le droit à l'erreur...
+
             </p>
             @endif
             <div>
@@ -61,18 +80,51 @@
                     </p>
                     @endif
                     <div class='postit'>
+                        @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL)
                         <div id='i1'>
-                            <img src='/uploads/postit.png'>
-                            <p>Indice 1</p>
+                            <p>{{$mission[0]->indice1}}</p>
                         </div>
+                        @else
+                        <div id='i1' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
+                                <img src='/uploads/postit.png'>
+                                <p>Indice 1 (30% des points bonus retirés)</p>
+                            </a></div>
+                        @endif
+                        @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL)
+                        @if($userindice[0]->indice2 != NULL)
+                        <div id='i2'>
+                            <p>{{$mission[0]->indice2}}</p>
+                        </div>
+                        @else
+                            <div id='i2' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
+                                <img src='/uploads/postit.png'>
+                                <p>Indice 2 (50% des points bonus retirés) </p>
+                                </a></div>
+                        
+                        @endif
+                        @else
                         <div id='i2'>
                             <img src='/uploads/postit.png'>
                             <p>???</p>
                         </div>
+                        @endif
+                        @if(count($userindice) != 0 and $userindice[0]->indice2 != NULL)
+                        @if($userindice[0]->indice3 != NULL)
+                        <div id='i3'>
+                            <p>{{$mission[0]->indice3}}</p>
+                        </div>
+                        @else
+                            <div id='i3' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
+                                <img src='/uploads/postit.png'>
+                                <p>Indice 3 (100% des points bonus retirés)</p></a>
+                            </div>
+                        @endif
+                        @else
                         <div id='i3'>
                             <img src='/uploads/postit.png'>
                             <p>???</p>
                         </div>
+                        @endif
                     </div>
                     @if($mission[0]->id == 1)
                     <div id="m1" class='resolution'>
@@ -103,52 +155,55 @@
                             <input type='text' placeholder="Où se trouve l'amplificateur ?">
                         </form>
                     </div>
+                    @elseif($mission[0]->id == 5)
+                    <div id="m5" class='resolution'>
+                        <form>
+                            <input type='text' placeholder="Entrez la solution">
+                        </form>
+                    </div>
+                    @elseif($mission[0]->id == 6)
+                    <div id="m6" class='resolution'>
+                        <form>
+                            <input type='text' placeholder="Entrez la solution">
+                        </form>
+                    </div>
+                    @elseif($mission[0]->id == 7)
+                    <div id="m7" class='resolution'>
+                        <h2>15121312IMMLLAH</h2>
+                        <form>
+                            <input type='text' placeholder="Entrez le code entendu">
+                        </form>
+                    </div>
                     @endif
             </div>
         </div>
     </div>
     </div>
     <div class='terminer'>
-        <a id='abandon' href='#'>Abandonner</a>
-        <a href='#'>Valider la mission</a>
+        @if(count($abandon) == 0) 
+            <a id='abandon' href='/abandon/{{$mission[0]->id}}'>Abandonner</a>
+            <a href='#'>Valider la mission</a>
+        @else
+        <h3>Vous avez perdu cette mission.</h3>
+        @endif
     </div>
     <script>
         var n = <?php echo $dispo; ?>;
-        var difficulte = <?php echo json_encode($mission[0]->difficulte); ?>;
-        if (difficulte == 'Très facile')
-            var pointsbonus = 20
-        if (difficulte == 'Facile')
-            var pointsbonus = 30
-        if (difficulte == 'Normale')
-            var pointsbonus = 40
-        if (difficulte == 'Difficile')
-            var pointsbonus = 50
-        let indice1 = document.getElementById('i1')
-        let indice2 = document.getElementById('i2')
-        let indice3 = document.getElementById('i3')
-        let nombreindices = <?php echo json_encode($indice); ?>;
-        indice1.ondblclick = function() {
-            indice1.innerHTML = <?php echo json_encode($indice[0]); ?>;
-            document.getElementById('dispo').innerHTML = n - pointsbonus * 0.2
-        };
+        let bouton = document.querySelector('.reveler');
+        bouton.addEventListener('click', (e) => {
+            if(confirm("Voulez-vous vraiment révéler cet indice ?")){
+            } else {
+                e.preventDefault();
+            }
+        })
 
-        if (nombreindices.length >= 2) {
-            indice2.ondblclick = function() {
-                indice2.innerHTML = <?php if (isset($indice[1])) {
-                                        echo json_encode($indice[1]);
-                                    } ?>
-                document.getElementById('dispo').innerHTML = n - pointsbonus * 0.3
-            };
-        }
-
-        if (nombreindices.length == 3) {
-            indice3.ondblclick = function() {
-                indice3.innerHTML = <?php if (isset($indice[2])) {
-                                        echo json_encode($indice[2]);
-                                    } ?>
-                document.getElementById('dispo').innerHTML = n - pointsbonus * 0.5
-            };
-        }
+        let abandon = document.querySelector('#abandon')
+        abandon.addEventListener('click', (e) => {
+            if(confirm("Voulez-vous vraiment abandonner cette mission ? Vous pourrez passer à la suivante mais n'aurez aucun point de gagné...")){
+            } else {
+                e.preventDefault();
+            }
+        })
     </script>
     <script src='/js/mission.js'></script>
 

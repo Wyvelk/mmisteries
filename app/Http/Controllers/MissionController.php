@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Mission;
 use App\Models\Score;
 use App\Models\User;
+use App\Models\Indice;
 use Illuminate\Support\Facades\Auth;
 
 class MissionController extends Controller
@@ -17,9 +18,11 @@ class MissionController extends Controller
             if (Auth::check() and Auth::user()->progression + 1 >= $id) {
                 $mission = Mission::whereRaw("id=".$id)->get();
                 $reussi = MissionController::reussi($id);
-                $dispo = MissionController::points_dispo($id);
+                $abandon = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=0")->get();
+                $dispo = MissionController::points_dispo($id) - MissionController::bonus($id);
                 $indice = MissionController::indice($id);
-                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice]);
+                $userindice = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
+                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon]);
             } else {
                 return redirect('login');
             }
@@ -29,8 +32,23 @@ class MissionController extends Controller
 
     }
 
-    public function abandonner(){
+    public function abandon($id){
+        $abandonner = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=0")->get();
+        if(count($abandonner) == 0){
+            $m = new Score();
+            $m->idUser = Auth::user()->id;
+            $m->idMission = $id;
+            $m->reussite = 0;
+            $m->rapidite = 0;
+            $m->bonus = 0;
+            $m->reussie = 0;
+            $m->save();
+            $user = User::whereRaw('id='.Auth::user()->id)->get();
+            $user[0]->progression = $id;
+            $user[0]->save();
+        }
 
+        return redirect('mission/'.$id);
     }
 
     public function points_dispo($id){
@@ -54,7 +72,7 @@ class MissionController extends Controller
         $users = User::whereRaw("progression >=". $id)->get();
         foreach($users as $user){
             $mission_pass = Score::whereRaw("idUser=".$user->id)->whereRaw("idMission=".$id)->whereRaw("reussie != 0")->get();
-            if(isset($mission_pass))
+            if(count($mission_pass) != 0)
                 array_push($reussite, $user);
         }
         return count($reussite);
@@ -83,6 +101,50 @@ class MissionController extends Controller
         }
     }
 
+    public function aide($id){
+        $mission = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
+        if(count($mission) == 0){
+            $m = new Indice();
+            $m->idUser = Auth::user()->id;
+            $m->idMission = $id;
+            $m->save();
+        }
+        $mission = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
+        if($mission[0]->indice1 == NULL){
+            $mission[0]->indice1 = 1;
+            $mission[0]->save();
+        } elseif($mission[0]->indice2 == NULL){
+            $mission[0]->indice2 = 1;
+            $mission[0]->save();
+        } elseif($mission[0]->indice3 == NULL){
+            $mission[0]->indice3 = 1;
+            $mission[0]->save();
+        }
+        return redirect('mission/'.$id);
+    }
 
+    public function bonus($id){
+        $difficulte = Mission::whereRaw('id='.$id)->get();
+        if ($difficulte[0]->difficulte == 'Très facile')
+            $pointsbonus = 20;
+        if ($difficulte[0]->difficulte == 'Facile')
+            $pointsbonus = 30;
+        if ($difficulte[0]->difficulte == 'Normale')
+            $pointsbonus = 40;
+        if ($difficulte[0]->difficulte == 'Difficile')
+            $pointsbonus = 50;
+        $mission = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
+        if(count($mission) == 0){
+            return 0;
+        } elseif($mission[0]->indice3 == 1){
+            return $pointsbonus;
+        } elseif($mission[0]->indice2 == 1){
+            return $pointsbonus * 0.5;
+        } else{
+            return $pointsbonus * 0.3;
+        }
+    
+    }
+    
     }
 ?>

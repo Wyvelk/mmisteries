@@ -10,11 +10,17 @@ use App\Models\Score;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+
 class FirstController extends Controller
 {
     public function start()
     {
         return view('start');
+    }
+
+    public function tease()
+    {
+        return view('tease');
     }
 
     public function login()
@@ -33,13 +39,13 @@ class FirstController extends Controller
     }
 
     public function equipe() {
-        $points = Score::whereRaw("idUser=" . Auth::user()->id . "")->get();
+        $points = Score::whereRaw("idUser=".Auth::user()->id)->get();
             $total = 0;
             for ($i = 0; $i < count($points); $i++) {
                 $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
             }
-        $classement = FirstController::classement();
-        return view('equipe', ['total'=>$total, 'classement'=>$classement]);
+        $classement = FirstController::classement(Auth::user()->id);
+        return view('equipe', ['points'=>$points,'total'=>$total, 'classement'=>$classement]);
     }
 
     public function journal() {
@@ -54,9 +60,8 @@ class FirstController extends Controller
             for ($i = 0; $i < count($points); $i++) {
                 $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
             }
-
             $achievement = Mission::whereRaw("id=" . Auth::user()->progression)->get();
-            $classement = FirstController::classement();
+            $classement = FirstController::classement(Auth::user()->id);
             return view('accueil', ['total' => $total, 'achievement' => $achievement, 'classement'=>$classement]);
         } else {
             return redirect('login');
@@ -97,7 +102,7 @@ class FirstController extends Controller
     }
 
 
-    public function classement()
+    public function classement($id)
     {
         $users = [];
         $totaux = [];
@@ -122,7 +127,7 @@ class FirstController extends Controller
             if (!isset($before) or $before != $v)
                 $position += 1;
             foreach ($totaux as $u) {
-                if ($v == $u[1] and $u[0] == Auth::user()->id) {
+                if ($v == $u[1] and $u[0] == $id) {
                     $before = $v;
                     if($position == 1 or $position == 0){
                         return 1 ."er";

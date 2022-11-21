@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<section class='start'>
+<section class='accueil'>
     <video class='video' width="250" loop autoplay>
     <source src="/uploads/final_1.mp4"
             type="video/mp4">

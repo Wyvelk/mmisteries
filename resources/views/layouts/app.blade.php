@@ -20,15 +20,17 @@
 <body>
     <header>
         <div class='menu-nav'>
-            <img src="/uploads/fissure2.png" />
+            <div>
+            <img id='fissure' src="/uploads/fissure2.png" />
             <img id='logo' src="/uploads/logo.png" />
-            <img src="/uploads/fissure3.png" />
+            <img id='fissure' src="/uploads/fissure3.png" />
+</div>
         </div>
         <div id='login-team'>
             @auth
             <div>
-                <a href='/equipe'><img src='/uploads/profil.png'>
-                <span id="nom">{{ Auth::user()->name }}</span></a>
+            <a href=''><img src= '/storage/{{ Auth::user()->img_url }}'>
+            <span id="nom">{{ Auth::user()->name }}</span></a>
             </div>
             <a href='/signout'><img src='/uploads/logout.png'></a>
             @endauth

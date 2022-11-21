@@ -9,7 +9,7 @@
     @if(session('success'))
     <h3>{{session('success')}}</h3>
 @endif
-    <form action="{{ route('register.custom') }}" method="POST">
+    <form action="{{ route('register.custom') }}" method="POST" enctype='multipart/form-data'>
         @csrf
         <label for="username">Nom de l'équipe</label>
         <input type="text" placeholder="Nom de l'équipe" id="name" class="form-control" name="name" required autofocus>

@@ -28,9 +28,6 @@ h2, h1 {
     font-size: 5rem;
 }
 
-.titre {
-    padding-top: 2rem;
-}
 
 /*HEAD*/
 
@@ -40,8 +37,7 @@ header {
     flex-direction: column;
     position: relative;
     justify-content: center;
-    padding: 2em;
-    padding-top: 1em;
+    padding-bottom: 1em;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     z-index: 1;
 }
@@ -60,8 +56,10 @@ header {
 
 #login-team img{
     width: 60px;
-    height: auto;
+    height: 60px;
+    aspect-ratio: 1/1;
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 #login-team div a{
@@ -73,11 +71,14 @@ header {
 #login-team span{
     color: white;
     font-size: 1vw;
+    padding-top: 0.5em;
 }
 
 header>div {
     text-align: center;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 nav{
@@ -110,16 +111,9 @@ header img {
 }
 
 #logo{
-    width: 30%;
-    height: 30%;
-    padding-top: 1em;
+    width: 25%;
 }
 
-.menu-nav{
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
-}
 
 
 /*FOOTER*/
@@ -129,13 +123,67 @@ footer {
     text-align: center;
     color: white;
     display: flex;
+    justify-content: center;
     padding: 1em;
     z-index: 1;
     background-color: #411355;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
+footer p, footer h3{
+    margin: 0;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
 footer img {
     width: 80px;
 }
 
+@media screen and (min-width: 1025px){
+    header>div{
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #login-team span{
+        color: white;
+        font-size: 1.5vw;
+    }
+
+    #login-team img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #logo{
+        width: 45%;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 425px){
+
+    #fissure{
+        display: none;
+    }
+    
+    #logo{
+        width: 55%;
+        margin-top: 1em;
+    }
+
+    #login-team span{
+        display: none;
+    }
+
+    #login-team img{
+        width: 40px;
+    }
+}
