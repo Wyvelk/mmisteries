@@ -1,6 +1,6 @@
 .mission{
     margin: 3em;
-
+    flex-grow: 1;
 }
 
 .mission h2{
@@ -85,14 +85,16 @@
     margin: 0 auto;
 }
 
-.terminer a{
+.terminer a, .terminer button{
     background-color: #31667c;
     color: white;
+    font-family: Poppins;
+    border: none;
     text-decoration: none;
     padding: 1em;
     text-align: center;
     margin: 1em;
-    width: 230px;
+    width: 220px;
     border-radius: 20px;
     font-size: large;
     transition: 0.3s;
@@ -102,13 +104,19 @@
 .terminer{
     display: flex;
     justify-content: right;
+    align-items: center;
 }
 
-.terminer a:hover{
+#abandon{
+    padding: 1.2em;
+    
+}
+.terminer a:hover, .terminer button:hover{
     letter-spacing: 1px;
     color: #eae655;
     transition: 0.3s;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .enigmes{
@@ -124,7 +132,7 @@
     background-image: url('../uploads/brown-texture.jpg');
     background-size: cover;
     border: 20px solid #eae655;
-    height: 481.27px;
+    padding-bottom: 3em;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -179,7 +187,7 @@
     width: 75%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 50px;
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
     margin: 0 auto;
     margin-top: 2em;
@@ -237,4 +245,133 @@
 #m4 a:hover{
     letter-spacing: 1px;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 1024px){
+    .enigmes > img{
+        width: 150px;
+        top: -80px;
+    }
+
+    #m3 img{
+        width: 60%;
+        height: auto;
+    }
+
+    .enigmes h3{
+        font-size: medium;
+    }
+
+    .postit div p{
+        font-size: small;
+    }
+
+    .infos h3{
+        font-size: medium;
+    }
+
+    .infos h4{
+        font-size: x-small;
+    }
+
+    .infos div p{
+        font-size: medium;
+    }
+
+    .infos i{
+        font-size: x-small;
+    }
+
+    .terminer{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 880px){
+    .tableau{
+        display: block;
+        margin-top: 2em;
+    }
+
+    .infos h3{
+        font-size: 1.5rem;
+    }
+
+    .infos h4{
+        font-size: small;
+    }
+
+    #m2{
+        display: block;
+        text-align: center;
+    }
+
+    #dispo{
+        font-size: xxx-large;
+    }
+
+    .infos div p{
+        font-size: x-large;
+    }
+
+    .infos i{
+        font-size: small;
+    }
+
+    .mission h2{
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .enigmes{
+        margin-top: 6em;
+    }
+
+    .terminer a, .terminer button{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .mission h2{
+        font-size: x-large;
+    }
+
+    .postit img{
+        width: 50%;
+    }
+
+    .postit{
+        display: block;
+    }
+
+    #m1 input, #m2 input, #m3 input, #m4 input, #m5 input, #m6 input, #m7 input{
+        font-size: small;
+    }
+
+    .terminer{
+        display: block;
+        margin-top: 3em;
+        text-align: center;
+    }
+
+    #m2 img{
+        width: 80%;
+        height: auto;
+        margin: 0;
+    }
+
+    #m3 img{
+        width: 90%;
+        height: auto;
+    }
+    .terminer a, .terminer button{
+        font-size: medium;
+        width: 70%;
+    }
+
+    .terminer a{
+        margin: 0 auto;
+        display: block;
+    }
 }

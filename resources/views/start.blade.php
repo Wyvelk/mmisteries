@@ -7,7 +7,10 @@
 @section('content')
 
 <section class='start'>
-    <div class='video'></div>
+<video class='video' width="250" muted loop autoplay playsinline>
+    <source src="/uploads/final_1.mp4"
+            type="video/mp4">
+    </video>
     <div class='join'>
         <h3>L'IUT n'est pas ce que vous croyez...</h3>
 

@@ -24,6 +24,7 @@ Route::get('/journal', [FirstController::class, 'journal']);
 Route::get('/mission/{id}', [MissionController::class, 'mission'])-> where('id', '[0-9]+');
 Route::get('/abandon/{id}', [MissionController::class, 'abandon'])-> where('id', '[0-9]+');
 Route::get('/aide/{id}', [MissionController::class, 'aide'])-> where('id', '[0-9]+');
+Route::post('/valider/{id}', [MissionController::class, 'valider'])-> where('id', '[0-9]+');
 
 Route::get('classement', [FirstController::class, 'classement']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');

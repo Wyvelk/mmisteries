@@ -28,8 +28,84 @@ class MissionController extends Controller
             }
         }
 
-    public function valider(){
+    public function valider($id, Request $request){
+        $mission = Mission::whereRaw('id='.$id)->get();
+        
+        if($mission[0]->id == 1){
+            if($request->reponse == 'dimension' OR $request->reponse == 'DIMENSION'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 2){
+            if($request->reponse == 'A14BC6' OR $request->reponse == 'a14bc6'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 3){
+            if($request->reponse == 'AMPLIFICATEUR' OR $request->reponse == 'amplificateur'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 4){
+            if($request->reponse == '102F' OR $request->reponse == '102f'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        }
+    }
 
+    public function create($id){
+        $final = MissionController::repartir_points($id);
+        $u = new Score();
+        $u->idUser = Auth::user()->id;
+        $u->idMission = $id;
+        $u->reussite = $final[0];
+        $u->rapidite = $final[1];
+        $u->bonus = $final[2];
+        $u->reussie = 1;
+        $u->save();
+        $user = User::whereRaw('id='.Auth::user()->id)->get();
+        $user[0]->progression = $id;
+        $user[0]->save();
+    }
+
+    public function repartir_points($id){
+        $final = [];
+        $users = User::all();
+        $difficulte = Mission::whereRaw('id='.$id)->get();
+        if ($difficulte[0]->difficulte == 'Très facile'){
+            $reussite = 30;
+            $bonus = 20;
+            $rapidite = 50;
+        }
+        if ($difficulte[0]->difficulte == 'Facile'){
+            $reussite = 50;
+            $bonus = 30;
+            $rapidite = 60;
+        }
+        if ($difficulte[0]->difficulte == 'Normale'){
+            $reussite = 80;
+            $bonus = 40;
+            $rapidite = 70;
+        }
+        if ($difficulte[0]->difficulte == 'Difficile'){
+            $reussite = 100;
+            $bonus = 50;
+            $rapidite = 90;
+        }
+        $dispo = $rapidite / count($users) - 1;
+        array_push($final, $reussite);
+        array_push($final, $rapidite - ($dispo * MissionController::reussi($id)));
+        array_push($final, $bonus - MissionController::bonus($id));
+        return $final;        
     }
 
     public function abandon($id){
@@ -63,7 +139,7 @@ class MissionController extends Controller
         } else{
             $points = 150;
         }
-        $dispo = ($maxi[0]->pointsmax - $points) / count($users);
+        $dispo = ($maxi[0]->pointsmax - $points) / count($users) - 1;
         return ($maxi[0]->pointsmax) - ($dispo * MissionController::reussi($id));
     }
 
@@ -75,7 +151,11 @@ class MissionController extends Controller
             if(count($mission_pass) != 0)
                 array_push($reussite, $user);
         }
-        return count($reussite);
+        if(count($reussite) == 0){
+            return count($reussite);
+        } else {
+            return count($reussite) - 1;
+        }
     }
 
     public function indice($id){
@@ -147,4 +227,3 @@ class MissionController extends Controller
     }
     
     }
-?>

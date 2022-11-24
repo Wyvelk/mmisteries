@@ -1,6 +1,6 @@
 .start {
     display: flex;
-    background-image: url('/uploads/fond.jpg');
+    background-image: url('/uploads/fond.jpeg');
     background-size: cover;
     width: 100%;
     min-height: 80vh;
@@ -74,4 +74,84 @@
     font-size: xx-large;
     font-family: treenightregular;
     
+}
+
+@media screen and (max-width: 1024px){
+    .video{
+        width: 450px;
+        height: 350px;
+        margin: 0 auto;
+        margin-top: 3em;
+    }
+
+    .start{
+        flex-direction: column;
+    }
+
+    .join a {
+        border-radius: 50px;
+        position: static;
+    }
+
+    .join h3 {
+        font-size: 4vw;
+        margin-top: 1em;
+    }
+
+    .join > div{
+        display: flex;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        justify-content: center;
+    }
+
+    .join a:hover {
+        letter-spacing: 1px;
+    }
+
+    .join{
+        margin-right: 2em;
+        justify-content: center;
+        text-align: center;
+      
+    }
+}
+
+@media screen and (max-width: 768px){
+    .join a {
+        font-size: 3vw;
+    }
+
+    .start{
+        padding-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .video{
+        width: 90%;
+        height: 250px;
+        margin: 0 auto;
+        margin-top: 3em;
+    }
+
+    .join > div{
+        flex-direction: column;
+    }
+
+    .join div div{
+        margin: 0.5em;
+    }
+
+    .join a {
+        font-size: 3.5vw;
+    }
+
+    .join a:hover{
+        letter-spacing: 0;
+    }
+
+    .join h3 {
+        font-size: 6vw;
+    }
 }

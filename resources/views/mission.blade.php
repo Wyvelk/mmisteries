@@ -87,7 +87,7 @@
                         @else
                         <div id='i1' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 1 (30% des points bonus retirés)</p>
+                                <p>Indice 1 <br/><strong>-30% points bonus</strong></p>
                             </a></div>
                         @endif
                         @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL)
@@ -98,7 +98,7 @@
                         @else
                             <div id='i2' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 2 (50% des points bonus retirés) </p>
+                                <p>Indice 2 <br/><strong>-50% points bonus</strong></p>
                                 </a></div>
                         
                         @endif
@@ -116,7 +116,7 @@
                         @else
                             <div id='i3' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 3 (100% des points bonus retirés)</p></a>
+                                <p>Indice 3 <br/><strong>-100% points bonus</strong></p></a>
                             </div>
                         @endif
                         @else
@@ -128,50 +128,57 @@
                     </div>
                     @if($mission[0]->id == 1)
                     <div id="m1" class='resolution'>
-                        <form>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
                             <label>Une fois le téléphone trouvé, résolvez l'éngime qui se cache avec lui en tapant votre réponse ci-dessous.</label>
-                            <input type='text' placeholder='Entrez le mot-code'>
+                            <input type='text' name='reponse' placeholder='Entrez le mot-code'>
                         </form>
                     </div>
                     @elseif($mission[0]->id == 2)
                     <div id="m2" class='resolution'>
                         <img src='/uploads/affiche.jpg'>
-                        <form>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
                             <label>Ayez le sens du détail et le mot de passe se révélera à vous.</label>
-                            <input type='text' placeholder='Entrez le mot de passe' value='4BA6C1'>
+                            <input type='text' name='reponse' placeholder='Entrez le mot de passe' value='4BA6C1'>
                         </form>
                     </div>
                     @elseif($mission[0]->id == 3)
                     <div id="m3" class='resolution'>
                         <img id='m3' src='/uploads/mission3.png'>
-                        <form>
-                            <input type='text' placeholder='Entrez la solution'>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder='Entrez la solution'>
                         </form>
                     </div>
                     @elseif($mission[0]->id == 4)
                     <div id="m4" class='resolution'>
                         <a href="/uploads/unknown.zip" download="Unknown.zip">Télécharger</a>
-                        <form>
-                            <input type='text' placeholder="Où se trouve l'amplificateur ?">
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder="Où se trouve l'amplificateur ?">
                         </form>
                     </div>
                     @elseif($mission[0]->id == 5)
                     <div id="m5" class='resolution'>
-                        <form>
-                            <input type='text' placeholder="Entrez la solution">
+                    <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder="Entrez la solution">
                         </form>
                     </div>
                     @elseif($mission[0]->id == 6)
                     <div id="m6" class='resolution'>
-                        <form>
-                            <input type='text' placeholder="Entrez la solution">
+                    <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder="Entrez la solution">
                         </form>
                     </div>
                     @elseif($mission[0]->id == 7)
                     <div id="m7" class='resolution'>
-                        <h2>15121312IMMLLAH</h2>
-                        <form>
-                            <input type='text' placeholder="Entrez le code entendu">
+                        <h2>08121312IMMLLAH</h2>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder="Entrez le code entendu">
                         </form>
                     </div>
                     @endif
@@ -182,7 +189,7 @@
     <div class='terminer'>
         @if(count($abandon) == 0) 
             <a id='abandon' href='/abandon/{{$mission[0]->id}}'>Abandonner</a>
-            <a href='#'>Valider la mission</a>
+            <button type='submit' id='valider'>Valider</button>
         @else
         <h3>Vous avez perdu cette mission.</h3>
         @endif
@@ -204,6 +211,15 @@
                 e.preventDefault();
             }
         })
+
+        let valider = document.querySelector('#valider')
+        valider.onclick = function() { 
+            if(confirm("Souhaitez-vous vraiment valider cette mission ? Si vous n'avez pas la bonne réponse, vous passerez cette mission sans les points !")){
+                document.forms['enigme'].submit()
+            } else {
+                e.preventDefault();
+            }
+        }
     </script>
     <script src='/js/mission.js'></script>
 

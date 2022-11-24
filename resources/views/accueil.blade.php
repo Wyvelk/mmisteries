@@ -6,7 +6,7 @@
 
 @section('content')
 <section class='accueil'>
-    <video class='video' width="250" loop autoplay>
+    <video class='video' width="250" muted loop autoplay>
     <source src="/uploads/final_1.mp4"
             type="video/mp4">
     </video>
@@ -16,7 +16,11 @@
 <section class='avancee'>
     <h1>Votre avancée</h1>
     <div class='equipe'>
-        <img src='/uploads/profil.png'>
+    @if(Auth::user()->img_url == null)
+              <img src= '/uploads/profil.png'>
+              @else
+                <img src= '/storage/{{Auth::user()->img_url }}'>
+              @endif
         <h3>Équipe <i>{{ Auth::user()->name }}</i>, voici vos résultats actuels.</h3>
     </div>
 

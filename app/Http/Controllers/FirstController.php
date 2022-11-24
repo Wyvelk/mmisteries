@@ -49,7 +49,8 @@ class FirstController extends Controller
     }
 
     public function journal() {
-        return view('story');
+        $progression = Auth::user()->progression;
+        return view('story', ['progression'=>$progression]);
     }
 
     public function accueil()

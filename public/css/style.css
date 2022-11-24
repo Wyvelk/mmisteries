@@ -12,7 +12,7 @@
 
 body{
     background-image: url('../uploads/texture.jpg');
-    background-size: cover;
+    background-size: contain;
     display: flex;
     font-family: Poppins;
     margin: 0 auto;
@@ -147,6 +147,10 @@ footer img {
     header>div{
         margin-bottom: 1em;
     }
+
+    #mySidenav{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -159,6 +163,14 @@ footer img {
         width: 50px;
         height: 50px;
     }
+
+    nav a {
+        padding: 1.5em;
+    }
+
+    #mySidenav{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -166,6 +178,79 @@ footer img {
         width: 45%;
         margin-top: 1em;
     }
+
+    #mySidenav{
+        display: block;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        right: -250px;
+        background-color: #411355;
+        padding-top: 60px;
+        text-align: left;
+        transition: right 0.5s ease;
+      }
+      
+      /* Sidenav menu links */
+      .sidenav a {
+        padding: 8px 8px 20px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #F0C600;
+      }
+      
+      .sidenav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      /* Active class */
+      .sidenav.active {
+        right: 0;
+      }
+      
+      /* Close btn */
+      .sidenav .close {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+      }
+      
+      /* Icône burger */
+
+      #openBtn{
+        position: absolute;
+        bottom: 38%;
+        left: 5%;
+      }
+
+      .burger-icon span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+      }
+
 }
 
 @media screen and (max-width: 425px){
@@ -185,5 +270,12 @@ footer img {
 
     #login-team img{
         width: 40px;
+        height: 40px;
     }
+
+    footer img{
+        width: 50px;
+    }
+
+
 }

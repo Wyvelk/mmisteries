@@ -1,6 +1,6 @@
 .accueil {
     display: flex;
-    background-image: url('/uploads/fond.jpg');
+    background-image: url('/uploads/fond.jpeg');
     background-size: cover;
     width: 100%;
     margin: 0;
@@ -49,7 +49,9 @@
 
 .equipe img{
     border-radius: 50%;
-    background-color: black;
+    width: 110px;
+    height: 110px;
+    border: 7px solid black;
 }
 
 .equipe h3{

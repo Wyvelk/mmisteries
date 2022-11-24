@@ -30,7 +30,7 @@
         <div id='login-team'>
             @auth
             <div>
-            <a href=''>
+            <a href='/'>
               @if(Auth::user()->img_url == null)
               <img src= '/uploads/profil.png'>
               @else
@@ -38,7 +38,7 @@
               @endif
                 <span id="nom">{{ Auth::user()->name }}</span></a>
             </div>
-            <a href='/signout'><img src='/uploads/logout.png'></a>
+            
             @endauth
             @guest
             <div>
