@@ -19,6 +19,7 @@ body{
     line-height: 1;
     max-width: 1600px;
     min-height: 100vh;
+    margin:0 auto;
     flex-direction: column;
 }
 
@@ -28,6 +29,15 @@ h2, h1 {
     font-size: 5rem;
 }
 
+
+header a:hover {
+    filter: drop-shadow(0 0 0.2rem white);
+    transition: 0.5s
+}
+
+header a{
+    transition:0.5s;
+}
 
 /*HEAD*/
 
@@ -101,7 +111,7 @@ nav a {
 nav a:hover{
     letter-spacing: 3px;
     transition: 0.5s;
-    
+
     font-weight: bold;
 }
 
