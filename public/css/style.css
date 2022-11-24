@@ -17,7 +17,7 @@ body{
     font-family: Poppins;
     margin: 0 auto;
     line-height: 1;
-    max-width: 1600px;
+    max-width: 2000px;
     min-height: 100vh;
     margin:0 auto;
     flex-direction: column;
@@ -209,7 +209,7 @@ footer img {
         text-align: left;
         transition: right 0.5s ease;
       }
-      
+
       /* Sidenav menu links */
       .sidenav a {
         padding: 8px 8px 20px 32px;
@@ -221,22 +221,22 @@ footer img {
         display: block;
         transition: 0.3s;
       }
-      
+
       .sidenav a:hover {
         color: #F0C600;
       }
-      
+
       .sidenav ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
       }
-      
+
       /* Active class */
       .sidenav.active {
         right: 0;
       }
-      
+
       /* Close btn */
       .sidenav .close {
         position: absolute;
@@ -244,7 +244,7 @@ footer img {
         right: 25px;
         font-size: 36px;
       }
-      
+
       /* Icône burger */
 
       #openBtn{
@@ -268,7 +268,7 @@ footer img {
     #fissure{
         display: none;
     }
-    
+
     #logo{
         width: 55%;
         margin-top: 1em;
