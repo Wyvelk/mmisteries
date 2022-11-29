@@ -6,6 +6,7 @@
 .stats{
     text-align: center;
     margin: 4em;
+    margin-bottom: 1em;
 }
 
 .stats h2{
@@ -80,6 +81,19 @@
     right: -15%;
     transform: rotateY(180deg);
     width: 75%;
+    animation: image 1s linear;
+}
+
+#chap1{
+    margin-top: 0;
+}
+
+#chap2 img{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: -15%;
+    width: 75%;
 }
 
 .progress {
@@ -103,6 +117,15 @@
       background-color: #F0C600;
       width: 100%;
       border-radius: 0;
+    }
+  }
+
+  @keyframes image {
+    0% {
+      right: -15px;
+    }
+    100% {
+      right: 50%;
     }
   }
 

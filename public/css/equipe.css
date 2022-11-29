@@ -82,3 +82,29 @@
     font-size: 2.5vw;
     margin: 0;
 }
+
+.objets{
+    display: flex;
+    justify-content: space-around;
+}
+
+.objets img{
+    width: 20%;
+    transition: 0.5s;
+}
+
+.objets img:hover{
+    transform: rotate(10deg);
+    transition: 0.5s;
+}
+
+.nom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nom img{
+    width: 10%;
+    margin: 0 auto;
+}

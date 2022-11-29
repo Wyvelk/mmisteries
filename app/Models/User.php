@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'slogan',
         'img_url',
-        'email',
+        'players',
         'password',
     ];
 

@@ -59,6 +59,18 @@
             puissante brille. <br /><br />Rendez-vous à l'heure et emplacement exacts pour tenter de révéler cet endroit. Attention, si vous êtes en retard, il n'y aura pas de seconde chance, vous n'avez pas le droit à l'erreur...
 
             </p>
+            @elseif($mission[0]->id == 8)
+            <p><strong>Description</strong><br /><br />
+            Vous y êtes presque... Tim n'a besoin que de trouver la boussole qui lui permettra de détecter le portail et de sortir de ce monde. La lumière est revenue dans l'IUT de l'Autre Dimension et sur son ordinateur, Tim possède quelques informations
+            intéressantes pour retrouver la boussole.<br /><br />
+            Votre but est d'aider Tim à comprendre le texte découvert afin de lui transmettre la position exacte de l'objet qu'il recherche. 
+            </p>
+            @elseif($mission[0]->id == 9)
+            <p><strong>Description</strong><br /><br />
+            Pour cette dernière mission, vous avez plusieurs tâches à accomplir :
+                <br />- Décoder la boussole afin de savoir comment orienter le chemin.
+                <br />- Trouver à quel endroit sur le plan il faut placer le point de départ du chemin.
+                <br />- Suivre le chemin jusqu'au portail.
             @endif
             <div>
                 <h2 id='dispo'>100</h2>
@@ -168,9 +180,10 @@
                     </div>
                     @elseif($mission[0]->id == 6)
                     <div id="m6" class='resolution'>
-                    <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                        <a href="/uploads/Mission5.zip" download="Mission5.zip">Télécharger</a>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                             @csrf
-                            <input type='text' name='reponse' placeholder="Entrez la solution">
+                            <input type='text' name='reponse' placeholder="Comment s'appelle la créature ?">
                         </form>
                     </div>
                     @elseif($mission[0]->id == 7)
@@ -178,7 +191,24 @@
                         <h2>08121312IMMLLAH</h2>
                         <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                             @csrf
+                            <input type='text' name='reponse' placeholder="Entrez le mot entendu sans fautes">
+                        </form>
+                    </div>
+                    @elseif($mission[0]->id == 8)
+                    <div id="m8" class='resolution'>
+                        <h2>énigme</h2>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
                             <input type='text' name='reponse' placeholder="Entrez le code entendu">
+                        </form>
+                    </div>
+                    @elseif($mission[0]->id == 9)
+                    <div id="m9" class='resolution'>
+                        <h3>Le Nord est le Sud. <br />Le Sud est l'Est.<br /> L'Est est à la fois le Sud et l'Ouest. <br />La boussole pointe vers le Sud-Est.
+                        </h3>
+                        <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
+                            @csrf
+                            <input type='text' name='reponse' placeholder="Entrez le code final">
                         </form>
                     </div>
                     @endif

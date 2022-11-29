@@ -51,6 +51,7 @@
     </div>
 
     <div id='chap2' class="chapitre">
+        <img src='/uploads/TELEPHON.png'>
         <h3>Chapitre 2</h3>
         <p>Le téléphone de Tim, retrouvé dans les toilettes, fut la seule et unique trace encore visible de l'étudiant. Et le cri entendu par Mme Hayenne provenait de cet endroit précisément. Certaines théories stipulaient qu’il s’agissait d’un appel à l’aide, alors que d’autres pensaient plutôt à des cris de souffrance et qu’il était déjà trop tard. Tim se trouvait dans un endroit dans lequel personne ne pouvait se rendre, où les actions effectuées dans ce monde n’avaient que très peu d’influence dans celui dans lequel semblait se trouver le garçon…
 
@@ -63,12 +64,8 @@
         </p>
     </div>
 
-    <div id='chapimpair' class="chapitre">
+    <div id='chap3' class="chapitre">
         <h3>Chapitre 3</h3>
-        <video class='video' width="250" muted loop autoplay>
-    <source src="/uploads/monstrefinal.mp4"
-            type="video/mp4">
-    </video>
         <p>Une certaine obscurité s’était abattue dans les couloirs lorsque Tim put ouvrir la porte de la salle 103F. De ce fait, il ne put voir quelle était la chose qui semblait s’approcher dangereusement de lui… Heureusement, l’étudiant était désormais en sécurité, sain et sauf. Avec un peu de temps devant lui, il put enfin souffler et tenter de garder son calme malgré les bruits inquiétants venant de toutes les directions.
 
             <br /><br />L’Autre Dimension ressemblait à un monde froid et abandonné. Un IUT délabré baignant dans une atmosphère silencieuse et fantomatique aux tons mauves. Pour comprendre son environnement et réussir à s’en échapper, Tim cherchait à communiquer des informations plus claires jusqu’au monde normal, pour tenter d’entrer en communication avec des personnes susceptibles de l’aider, car s’il y avait une entrée à cette dimension, il devait aussi exister une sortie. Mais la communication entre les deux univers était très faible. En effet, des sortes d’ondes interdimensionnelles connectaient les deux parties et permettaient d’entendre des sons ou vibrations de l’autre monde. Et certains endroits spécifiques de l’IUT étaient plus réceptifs à ce type de connexions.

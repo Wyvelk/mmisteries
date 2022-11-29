@@ -5,9 +5,16 @@
 @endsection
 @section('content')
 <section class='equipe'>
-    <div>
-        <h2>{{Auth::user()->name}}</h2>
-        <h3>{{Auth::user()->slogan}}</h3>
+    <div class='nom'>
+        @if(Auth::user()->img_url == null)
+        <img src='/uploads/profil.png'>
+        @else
+        <img src='/storage/{{Auth::user()->img_url }}'>
+        @endif
+        <div>
+            <h2>{{Auth::user()->name}}</h2>
+            <h3>{{Auth::user()->slogan}}</h3>
+        </div>
     </div>
     <div class="recap">
         <div class='points'>
@@ -54,22 +61,64 @@
             </svg>
             <div>
                 <h3>Classement des équipes</h3>
-                <div>
-                    <h2>1er</h2>
-                    <p>Nom de l'équipe ~ 100 points</p>
-                </div>
-                <div>
-                    <h2>2ème</h2>
-                    <p>Nom de l'équipe ~ 100 points</p>
-                </div>
-                <div>
-                    <h2>3ème</h2>
-                    <p>Nom de l'équipe ~ 100 points</p>
-                </div>
+                @foreach($classement as $u)
+                    @if($u[3] == 1)
+                    <div>
+                        <h2>1er</h2>
+                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                    </div>
+                    @endif
+                @endforeach
+                @foreach($classement as $u)
+                    @if($u[3] == 2)
+                    <div>
+                        <h2>2ème</h2>
+                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                    </div>
+                    @endif
+                @endforeach
+                @foreach($classement as $u)
+                    @if($u[3] == 3)
+                    <div>
+                        <h2>3ème</h2>
+                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                    </div>
+                    @endif
+                @endforeach
 
-                <p>Votre position est : {{ $classement }} </p>
+                <p>Votre position est : @foreach($classement as $u)
+                    @if($u[2] == Auth::user()->id)
+                        @if($u[3] == 1)
+                            {{$u[3]}}er
+                        @else
+                            {{$u[3]}}ème
+                        @endif
+                    @endif
+                @endforeach </p>
             </div>
         </div>
+    </div>
+    <div class='objets'>
+        @if(count($objets[0])==0)
+        <img src='/uploads/TELEPHONnoir.png'>
+        @else
+        <img src='/uploads/TELEPHON.png'>
+        @endif
+        @if(count($objets[1])==0)
+        <img src='/uploads/talkie-walkienoir.png'>
+        @else
+        <img src='/uploads/talkie-walkie.png'>
+        @endif
+        @if(count($objets[2])==0)
+        <img src='/uploads/videoprojonoir.png'>
+        @else
+        <img src='/uploads/videoprojo.png'>
+        @endif
+        @if(count($objets[3])==0)
+        <img src='/uploads/boussolenoir.png'>
+        @else
+        <img src='/uploads/boussole.png'>
+        @endif
     </div>
     </div>
 

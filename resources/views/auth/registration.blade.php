@@ -25,8 +25,8 @@
         @if ($errors->has('password'))
         <span class="text-danger">{{ $errors->first('password') }}</span>
         @endif
-        <label for="instagram">Instagram du chef d'équipe</label>
-        <input type="text" placeholder="Instagram" id="email_address" class="form-control" name="email" required autofocus>
+        <label for="joueurs">Noms des joueurs</label>
+        <input type="text" placeholder="Noms à séparer par une virgule" id="joueurs" class="form-control" name="players" required autofocus>
         @if ($errors->has('email'))
         <span class="text-danger">{{ $errors->first('email') }}</span>
         @endif

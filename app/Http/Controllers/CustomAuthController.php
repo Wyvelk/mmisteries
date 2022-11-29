@@ -55,13 +55,13 @@ class CustomAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'password' => 'required|min:4',
-            'email' => 'required',
+            'players' => 'required',
         ]);
         $data = $request->all();
         $verif = DB::select("select name from users where name = ?", [$data['name']]);
         if($verif == NULL){
             $this->create($data);
-            $credentials = $request->only('name', 'email', 'password');
+            $credentials = $request->only('name', 'players', 'password');
         
             if (Auth::attempt($credentials)) {
                 $user = User::whereRaw('id='.Auth::user()->id)->get();

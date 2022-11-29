@@ -59,6 +59,13 @@ class MissionController extends Controller
             } else {
                 MissionController::abandon($id);
             }
+        } elseif($mission[0]->id == 7){
+            if($request->reponse == 'Studio audiovisuel' OR $request->reponse == 'STUDIO AUDIOVISUEL' OR $request->reponse == 'STUDIO' OR $request->reponse == 'Studio'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
         }
     }
 
