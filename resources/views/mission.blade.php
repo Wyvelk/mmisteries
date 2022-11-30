@@ -39,13 +39,13 @@
             <p><strong>Description</strong><br /><br />
                 Tim reste hors de danger pour le moment. Mais parler avec lui reste tout de même encore compliqué, bien que la salle 103F soit adaptée. Quelque chose d'étrange brouille les pistes et détriore la qualité de communication.
                 <br /><br />
-                Trouvez l'amplificateur d'ondes et informez Tim de sa position pour communiquer avec lui. En réussissant, Tim pourra vous envoyer sa vidéo et vous gagnerez la possibilité d'obtenir un dernier indice supplémentaire...
+                Trouvez l'amplificateur d'ondes et informez Tim de sa position pour communiquer avec lui. En réussissant, Tim pourra vous envoyer ses vidéos et vous gagnerez la possibilité d'obtenir un dernier indice supplémentaire...
             </p>
             @elseif($mission[0]->id == 5)
             <p><strong>Description</strong><br /><br />
-                Voici ci-contre la vidéo envoyée par Tim. C'est une chance inouïe que vous l'ayez reçue ne serait-ce qu'en basse qualité. Ouvrez-la, et tentez de comprendre le message en clarifiant au mieux possible la vidéo qui a subi 
-                des modifications involontaires suite à l'envoi.
-                <br /><br />Une fois ceci fait, donnez la réponse à l'énigme qui se dissimule à l'intérieur du fichier et vous pourrez continuer de suivre le déroulement des évènements.
+                Voici ci-contre l'archive contenant les vidéos envoyées par Tim. C'est une chance inouïe que vous les ayez reçues ne serait-ce qu'en basse qualité. Ouvrez-les, et tentez de comprendre trouver le plus vite possible le message dans les vidéos qui ont subi 
+                des modifications involontaires suite à leur envoi.
+                <br /><br />Une fois ceci fait, donnez la réponse à l'énigme qui se dissimule à l'intérieur des fichiers et vous pourrez continuer de suivre le déroulement des évènements.
             </p>
             @elseif($mission[0]->id == 6)
             <p><strong>Description</strong><br /><br />

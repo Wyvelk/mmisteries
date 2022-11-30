@@ -15,10 +15,6 @@ class FirstController extends Controller
 {
     public function start()
     {
-        $target = '../storage/app/public';
-        $link = '/public/storage';
-        symlink($target, $link);
-        echo readlink($link);
         return view('start');
     }
 
