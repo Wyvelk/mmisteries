@@ -10,9 +10,7 @@
 }
 
 .accueil img{
-    max-width: 20%;
-    width: auto;
-    height: auto;
+    width: 20%;
     margin: 0 auto;
     margin-top: 2em;
 }
@@ -21,6 +19,20 @@
     flex-basis: 50%;
     background-color: black;
     margin: 3em;
+}
+@media screen and (max-width: 1024px){
+.accueil img{
+    display:none;
+}
+
+.video{
+    flex-basis: 100%;
+}
+
+.accueil{
+    height:fit-content;
+}
+
 }
 
 .avancee{
@@ -40,11 +52,13 @@
     border-radius: 50px 0 0 50px;
 }
 
+
+
 .equipe{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5em;
+    margin: 5em 5em auto 5em;
 }
 
 .equipe img{
@@ -71,6 +85,17 @@
     letter-spacing: 2px;
     transition: 0.5s;
     font-size: 3.3rem;
+}
+
+@media screen and (max-width:768px) {
+    .equipe{
+        flex-direction: column;
+
+    }
+
+    .equipe h3{
+        padding-left: 0;
+    }
 }
 
 .bandeau{
@@ -126,9 +151,42 @@
     height: auto;
 }
 
+@media screen and (max-width: 768px){
+  .bandeau{
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 25px;
+    margin: auto;
+    padding: 0;
+  }
+
+
+    }
+
+    @media screen and (max-width: 650px){
+        .bandeau{
+          flex-direction: column;
+          width:100%;
+          border-radius: 0;
+            margin: 0;
+        }
+
+
+          }
+
+
 .recompenses h1{
     margin-right: 55%;
     margin-left: 0;
     text-align: right;
     border-radius: 0 50px 50px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .avancee h1, .recompenses h1{
+        margin:0;
+        border-radius:0;
+        text-align: center;
+    }
+
 }
