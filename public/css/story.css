@@ -83,7 +83,7 @@
     width: 75%;
 }
 
-#chap5 img, #chap7 img, #chap9 img{
+#chap3 img, #chap5 img, #chap7 img, #chap9 img{
     position: absolute;
     bottom: 0;
     right: -15%;
@@ -95,7 +95,7 @@
     margin-top: 0;
 }
 
-#chap2 img, #chap4 img, #chap8 img{
+#chap2 img, #chap4 img, #chap8 img, #chap6 img{
     position: absolute;
     bottom: 0;
     top: 0;

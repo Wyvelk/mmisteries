@@ -77,6 +77,7 @@
 
             <br /><br />Une ombre se dessina sous la porte de la salle 103F, pendant qu’une température glaçante s’empara de l’air de la pièce. Quelque chose de froid et d’imposant patientait silencieusement derrière, dans le couloir du premier étage, Tim en était persuadé, il sentait sa présence très peu rassurante… Toute la nuit, il était resté au pied de la porte pour observer ces mouvements étranges, sans pouvoir fermer l’œil. C’était comme si les ténèbres frappaient à sa porte pour l’envahir. Dans cette pièce où se déroulaient habituellement des cours basiques, Tim pensait qu’il se cachait sûrement un moyen de communiquer plus facilement avec l’Autre Dimension.
         </p>
+        <img src='/uploads/103F.png'>
     </div>
     @endif
     @if(Auth::user()->progression >= 3)
@@ -107,8 +108,9 @@
     @endif
     @if(Auth::user()->progression >= 5)
     <div id='chap6' class="chapitre">
+        <img src='/uploads/portail_F.png'>
         <h3>Chapitre 6</h3>
-        <p> Comme stipulé dans les vidéos de Tim, ce dernier aurait croisé un étrange portail lumineux et circulaire sur son chemin et, dans un élan de curiosité, aurait malencontreusement atterri dans l’Autre Dimension en le traversant, alors qu’il repartait chez sa famille pour le week-end. Avec de nombreuses recherches dans les ordinateurs de l’IUT, il trouva de nouvelles informations qui lui fit froid dans le dos. Le monstre qui avait tenté de le tuer était une créature de l’ombre qui instaurait une obscurité totale partout où elle décidait de se rendre. L’IUT de cette dimension était donc plongé dans un nuage noir de ténèbres ne laissant passer que très peu de lumière.
+        <p>Tim se posa dans une salle discrètement afin de communiquer les faits importants de son histoire ; en effet, ce dernier aurait croisé un étrange portail lumineux et circulaire sur son chemin et, dans un élan de curiosité, aurait malencontreusement atterri dans l’Autre Dimension en le traversant, alors qu’il repartait chez sa famille pour le week-end. Avec de nombreuses recherches dans les ordinateurs de l’IUT, il trouva de nouvelles informations qui lui fit froid dans le dos. Le monstre qui avait tenté de le tuer était une créature de l’ombre qui instaurait une obscurité totale partout où elle décidait de se rendre. L’IUT de cette dimension était donc plongé dans un nuage noir de ténèbres ne laissant passer que très peu de lumière.
 
             <br /><br />Tim se disait que si ce monde possédait une entrée, il devait bien y avoir également une sortie. Mais comment retrouver ce portail de lumière qui l’avait amené jusqu’ici ? Si la créature repoussait toute lumière, il se devait de l’éliminer avant de pouvoir se mettre à la recherche de sa porte de sortie. Le courage l’animant, il souhaitait en découdre avec cette bête dont il n’avait encore jamais vu le visage. Son plan dangereux et un peu douteux était son seul espoir d’espérer retrouver son monde au plus vite. Ainsi, Tim voulut traquer le monstre, trouver sa niche et de quoi l’affronter.
 

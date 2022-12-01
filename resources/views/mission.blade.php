@@ -12,7 +12,7 @@
     <div class='tableau'>
         <div class='infos'>
             <h3>Informations</h3>
-            <h4><a href='/journal'>Chapitre {{$mission[0]->id}}</a> à lire avant de commencer cette mission !</h4>
+            <h4><a href='/journal#chap{{$mission[0]->id}}'>Chapitre {{$mission[0]->id}}</a> à lire avant de commencer cette mission !</h4>
             @if($mission[0]-> id == 1)
             <p><strong>Description</strong><br /><br />
                 La sonnerie d'un téléphone a retenti plusieurs fois depuis quelques jours à l'étage du bâtiment MMI.
@@ -67,8 +67,9 @@
             </p>
             @elseif($mission[0]->id == 9)
             <p><strong>Description</strong><br /><br />
+            Vous avez à votre disposition tous les éléments disponibles que Tim possède pour tenter de rentrer chez lui. L'important est de les utiliser dans le bon ordre...
             Pour cette dernière mission, vous avez plusieurs tâches à accomplir :
-                <br />- Décoder la boussole afin de savoir comment orienter le chemin.
+                <br /><br />- Décoder la boussole afin de savoir comment orienter le chemin.
                 <br />- Trouver à quel endroit sur le plan il faut placer le point de départ du chemin.
                 <br />- Suivre le chemin jusqu'au portail.
             @endif
@@ -99,7 +100,7 @@
                         @else
                         <div id='i1' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 1 <br/><strong>-30% points bonus</strong></p>
+                                <p>Indice 1 <br/><strong>-20% points bonus</strong></p>
                             </a></div>
                         @endif
                         @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL)
@@ -110,7 +111,7 @@
                         @else
                             <div id='i2' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 2 <br/><strong>-50% points bonus</strong></p>
+                                <p>Indice 2 <br/><strong>-30% points bonus</strong></p>
                                 </a></div>
                         
                         @endif
@@ -128,7 +129,7 @@
                         @else
                             <div id='i3' class='reveler'><a href='/aide/{{$mission[0]->id}}'>
                                 <img src='/uploads/postit.png'>
-                                <p>Indice 3 <br/><strong>-100% points bonus</strong></p></a>
+                                <p>Indice 3 <br/><strong>-50% points bonus</strong></p></a>
                             </div>
                         @endif
                         @else
@@ -196,7 +197,7 @@
                     </div>
                     @elseif($mission[0]->id == 8)
                     <div id="m8" class='resolution'>
-                        <h3>Je suis une énigme connue par tous les matheux, semble-t-il,
+                        <h3>Je suis une énigme connue de l'école, semble-t-il,
                             <br />Elle reflète l’astre lumineux qui éclaire nos journées,
                             <br />Muni de ce dont on chérit en avril,
                             <br />Seuls les plus futés sauront comment regarder.</h3>

@@ -77,7 +77,19 @@
     <div class="recompense second">2</div>
     <div class="recompense third">3</div>
 </section>
+<p style='text-align: right; color:red;'><input type="checkbox" name="case" id="afficher" type="submit" />
+<label for="afficher">Ne plus afficher cette page</label><input type="button" name="toto" id="toto" value="Fermer" onclick="window.close();" /></p>
 
+<!--popup-->
+<script type="text/javascript">
+    
+    window.onload=function() // Au chargement de la page
+{
+  window.open('popup.php','fenetre','toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=yes,menuBar=no,width=1020,height=800');
+  return(false)  // On ouvre la pop-up
+}
+//-->
+</script><br><br>
 
 
 @endsection('content')

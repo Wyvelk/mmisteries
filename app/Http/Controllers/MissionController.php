@@ -252,11 +252,11 @@ class MissionController extends Controller
         if(count($mission) == 0){
             return 0;
         } elseif($mission[0]->indice3 == 1){
-            return $pointsbonus;
-        } elseif($mission[0]->indice2 == 1){
             return $pointsbonus * 0.5;
-        } else{
+        } elseif($mission[0]->indice2 == 1){
             return $pointsbonus * 0.3;
+        } else{
+            return $pointsbonus * 0.2;
         }
     
     }

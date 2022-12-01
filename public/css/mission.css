@@ -213,6 +213,10 @@
     justify-content: center;
 }
 
+#m9 h2{
+    margin-bottom: 0.5em;
+}
+
 #m3, #m7, #m8{
     flex-direction: column;
 }
