@@ -48,6 +48,13 @@
     left: 5%;
 }
 
+@media screen and (max-width: 1000px){
+    .login img, .register img{
+        display:none;
+    }
+
+}
+
 .text-danger{
     font-size: small;
     color: red;
@@ -64,6 +71,7 @@ form {
     background-color: #f3d521;
     margin: 2rem auto;
     width: 30%;
+    min-width: 250px;
     border-radius: 20px;
     box-shadow: 25px 17px 52px 7px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 25px 17px 52px 7px rgba(0, 0, 0, 0.5);
@@ -98,6 +106,7 @@ input {
     padding: 0;
     background: none;
     width: 27%;
+    min-width: fit-content;
     transition: 0.5s;
     font-family: 'poppins';
     font-weight: bold;

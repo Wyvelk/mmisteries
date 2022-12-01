@@ -21,6 +21,7 @@
     z-index: -1;
     position: absolute;
     width: 25%;
+    min-width:150px;
     top: -10%;
     right: 0;
 }
@@ -94,7 +95,7 @@
     color: white;
     text-align: center;
     border-radius: 20px;
-    
+
     margin-left: 50%;
     text-decoration: none;
     transition: 0.3s;
@@ -129,6 +130,17 @@
     top: 5px;
     right: 38px;
     position: absolute;
+}
+
+@media screen and (max-width: 768px){
+
+    .barre-progression{
+        display:none;
+    }
+    .text{
+        flex-basis: 100%;
+    }
+
 }
 
 .point{
