@@ -59,8 +59,36 @@ class MissionController extends Controller
             } else {
                 MissionController::abandon($id);
             }
+        } elseif($mission[0]->id == 5){
+            if($request->reponse == 'Université' OR $request->reponse == 'UNIVERSITÉ' OR $request->reponse == 'UNIVERSITE' OR $request->reponse == 'universite' OR $request->reponse == 'université'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 6){
+            if($request->reponse == 'Le cyclope rampant' OR $request->reponse == 'LE CYCLOPE RAMPANT' OR $request->reponse == 'Le Cyclope Rampant' OR $request->reponse == 'le cyclope rampant'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
         } elseif($mission[0]->id == 7){
             if($request->reponse == 'Studio audiovisuel' OR $request->reponse == 'STUDIO AUDIOVISUEL' OR $request->reponse == 'STUDIO' OR $request->reponse == 'Studio'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 8){
+            if($request->reponse == '713705'){
+                MissionController::create($id);
+                return redirect('/accueil');
+            } else {
+                MissionController::abandon($id);
+            }
+        } elseif($mission[0]->id == 9){
+            if($request->reponse == 'BRAVO'){
                 MissionController::create($id);
                 return redirect('/accueil');
             } else {

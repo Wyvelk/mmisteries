@@ -196,16 +196,21 @@
                     </div>
                     @elseif($mission[0]->id == 8)
                     <div id="m8" class='resolution'>
-                        <h2>énigme</h2>
+                        <h3>Je suis une énigme connue par tous les matheux, semble-t-il,
+                            <br />Elle reflète l’astre lumineux qui éclaire nos journées,
+                            <br />Muni de ce dont on chérit en avril,
+                            <br />Seuls les plus futés sauront comment regarder.</h3>
                         <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                             @csrf
-                            <input type='text' name='reponse' placeholder="Entrez le code entendu">
+                            <input type='text' name='reponse' placeholder="Entrez un nombre">
                         </form>
                     </div>
                     @elseif($mission[0]->id == 9)
                     <div id="m9" class='resolution'>
                         <h3>Le Nord est le Sud. <br />Le Sud est l'Est.<br /> L'Est est à la fois le Sud et l'Ouest. <br />La boussole pointe vers le Sud-Est.
                         </h3>
+                        <h2>79</h2>
+                        <a href="/uploads/MissionFinale.zip" download="MissionFinale.zip">Télécharger</a>
                         <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                             @csrf
                             <input type='text' name='reponse' placeholder="Entrez le code final">

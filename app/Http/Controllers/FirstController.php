@@ -9,7 +9,7 @@ use App\Models\Mission;
 use App\Models\Score;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Artisan;
+
 
 class FirstController extends Controller
 {

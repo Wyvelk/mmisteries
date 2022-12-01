@@ -15,7 +15,7 @@
             l'inverse à une mission que vous avez réussie et la couleur <strong id='blue'>bleue</strong> à celles disponibles. Si vous échouez lors d'une mission, elle apparaîtra <strong id='red'>rouge</strong>. Mais ne vous
             en faites pas, le classement se fait par rapport aux nombres de points et pourrez toujours continuer l'aventure.
             Cliquez sur la mission que vous avez débloqué pour avancer dans votre quête de sauvetage.</p>
-        @for ($i = 0; $i <= Auth::user()->progression; $i++)
+        @for ($i = 0; $i < Auth::user()->progression; $i++)
             <div>
                 @if (isset($points[$i]))
                 @if($points[$i]->reussie != 0)
@@ -47,7 +47,7 @@
         <?php echo $couleur;
 
 
-        $avancee = ['0', '20%', '40%', '50%', '65%', '78%', '85%', '90%', '99%'];
+        $avancee = ['0', '20%', '40%', '50%', '65%', '78%', '85%', '90%', '99%', '99%'];
 
         echo "<div class='progression'>
             <style> .progression{ height:" . $avancee[$progression] . "; animation: barre 3s ease-out;}

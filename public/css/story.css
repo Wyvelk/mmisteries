@@ -71,7 +71,7 @@
     margin: 0;
 }
 
-#chap2 p, #chap2 h3{ 
+#chap2 p, #chap2 h3, #chap4 p, #chap4 h3, #chap6 p, #chap6 h3, #chap8 p, #chap8 h3{ 
     margin-left: 50%;
 }
 
@@ -81,14 +81,21 @@
     right: -15%;
     transform: rotateY(180deg);
     width: 75%;
-    animation: image 1s linear;
 }
+
+#chap5 img, #chap7 img, #chap9 img{
+    position: absolute;
+    bottom: 0;
+    right: -15%;
+    width: 65%;
+}
+
 
 #chap1{
     margin-top: 0;
 }
 
-#chap2 img{
+#chap2 img, #chap4 img, #chap8 img{
     position: absolute;
     bottom: 0;
     top: 0;
@@ -120,14 +127,6 @@
     }
   }
 
-  @keyframes image {
-    0% {
-      right: -15px;
-    }
-    100% {
-      right: 50%;
-    }
-  }
 
   :root * {
     /* Pause the animation */

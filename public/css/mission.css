@@ -208,12 +208,12 @@
     margin-left: 1.5em;
 }
 
-#m1, #m2, #m3, #m8, #m9{
+#m1, #m2, #m3, #m8{
     display: flex;
     justify-content: center;
 }
 
-#m3, #m7, #m8, #m9{
+#m3, #m7, #m8{
     flex-direction: column;
 }
 
@@ -231,7 +231,7 @@
     margin-top: 3em;
 }
 
-#m4 a, #m6 a{
+#m4 a, #m6 a, #m9 a{
     text-decoration: none;
     background-color: #eae655;
     color: white;
@@ -242,7 +242,7 @@
     transition: 0.3s;
 }
 
-#m4 a:hover, #m6 a:hover{
+#m4 a:hover, #m6 a:hover, #m9 a:hover{
     letter-spacing: 1px;
     transition: 0.3s;
 }
