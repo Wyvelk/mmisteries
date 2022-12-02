@@ -15,7 +15,21 @@
             l'inverse à une mission que vous avez réussie et la couleur <strong id='blue'>bleue</strong> à celles disponibles. Si vous échouez lors d'une mission, elle apparaîtra <strong id='red'>rouge</strong>. Mais ne vous
             en faites pas, le classement se fait par rapport aux nombres de points et pourrez toujours continuer l'aventure.
             Cliquez sur la mission que vous avez débloqué pour avancer dans votre quête de sauvetage.</p>
-        @for ($i = 0; $i < Auth::user()->progression; $i++)
+        <?php use Illuminate\Support\Facades\Auth;
+        $nbr = Auth::user()->progression; 
+        if(Auth::user()->progression == 9)
+            $nbr = 8;
+        if(date('d/m/Y') == '05/12/2022' and Auth::user()->progression >= 2)
+            $nbr = 1;
+        if(date('d/m/Y') == '06/12/2022' and Auth::user()->progression >= 4)
+            $nbr = 3;
+        if(date('d/m/Y') == '07/12/2022' and Auth::user()->progression >= 6)
+            $nbr = 5;
+        if(date('d/m/Y') == '08/12/2022' and Auth::user()->progression >= 7)
+            $nbr = 6;
+        
+        ?>
+            @for ($i = 0; $i <= $nbr; $i++)
             <div>
                 @if (isset($points[$i]))
                 @if($points[$i]->reussie != 0)
@@ -50,8 +64,8 @@
         $avancee = ['0', '20%', '40%', '50%', '65%', '78%', '85%', '90%', '99%', '99%'];
 
         echo "<div class='progression'>
-            <style> .progression{ height:" . $avancee[$progression] . "; animation: barre 3s ease-out;}
-                @keyframes barre{ from{height: 0%;} to{ height:" . $avancee[$progression] . ";}}
+            <style> .progression{ height:" . $avancee[$nbr] . "; animation: barre 3s ease-out;}
+                @keyframes barre{ from{height: 0%;} to{ height:" . $avancee[$nbr] . ";}}
         
         }</style>";
 

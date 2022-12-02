@@ -7,8 +7,22 @@
 @section('content')
 <section class='accueil'>
     <video class='video' width="250" muted loop autoplay>
-    <source src="/uploads/final_1.mp4"
+        @if(date('d/m/Y') == '05/12/2022')
+        <source src="/uploads/final_1.mp4"
             type="video/mp4">
+        @elseif(date('d/m/Y') == '06/12/2022')
+        <source src="/uploads/final_2.mp4"
+            type="video/mp4">
+        @elseif(date('d/m/Y') == '07/12/2022')
+        <source src="/uploads/final_3.mp4"
+            type="video/mp4">
+        @elseif(date('d/m/Y') == '08/12/2022')
+        <source src="/uploads/final_4.mp4"
+            type="video/mp4">
+        @elseif(date('d/m/Y') == '09/12/2022')
+        <source src="/uploads/final_5.mp4"
+            type="video/mp4">
+        @endif
     </video>
     <img class='arbre' src='/uploads/arbre.png' alt='image arbre'>
 </section>
@@ -38,7 +52,7 @@
         </div>
 
         <div>
-            <h4>Votre dernier accomplissement</h4>
+            <h4>Votre dernière réussite</h4>
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:msFilter; ">
                 <path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.8 6.91 4.82 7A6 6 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09A6 6 0 0 0 17.18 15c3-.1 4.82-2.7 4.82-7V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.22 12.08 4 9.3 4 8zm14 4.83V6h2v2c0 1.3-.22 4.08-2 4.83z"></path>
             </svg>
@@ -77,19 +91,5 @@
     <div class="recompense second">2</div>
     <div class="recompense third">3</div>
 </section>
-<p style='text-align: right; color:red;'><input type="checkbox" name="case" id="afficher" type="submit" />
-<label for="afficher">Ne plus afficher cette page</label><input type="button" name="toto" id="toto" value="Fermer" onclick="window.close();" /></p>
-
-<!--popup-->
-<script type="text/javascript">
-    
-    window.onload=function() // Au chargement de la page
-{
-  window.open('popup.php','fenetre','toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=yes,menuBar=no,width=1020,height=800');
-  return(false)  // On ouvre la pop-up
-}
-//-->
-</script><br><br>
-
 
 @endsection('content')

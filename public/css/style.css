@@ -191,6 +191,7 @@ footer img {
 
     #mySidenav{
         display: block;
+        z-index: 1;
     }
 
     nav{

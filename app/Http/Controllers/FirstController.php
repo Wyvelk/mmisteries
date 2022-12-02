@@ -38,22 +38,36 @@ class FirstController extends Controller
         return view('contact');
     }
 
+    public function explications()
+    {
+        return view('explications');
+    }
+
     public function equipe()
     {
-        $points = Score::whereRaw("idUser=" . Auth::user()->id)->get();
-        $total = 0;
-        for ($i = 0; $i < count($points); $i++) {
-            $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
+        if (Auth::check()) {
+            $points = Score::whereRaw("idUser=" . Auth::user()->id)->get();
+            $total = 0;
+            for ($i = 0; $i < count($points); $i++) {
+                $total += $points[$i]->reussite + $points[$i]->rapidite + $points[$i]->bonus;
+            }
+            $classement = FirstController::classement();
+            $objets = FirstController::objets();
+            return view('equipe', ['points' => $points, 'total' => $total, 'classement' => $classement, 'objets' => $objets]);
+        } else {
+            return view('login');
         }
-        $classement = FirstController::classement();
-        $objets = FirstController::objets();
-        return view('equipe', ['points' => $points, 'total' => $total, 'classement' => $classement, 'objets' => $objets]);
     }
+
 
     public function journal()
     {
-        $progression = Auth::user()->progression;
-        return view('story', ['progression' => $progression]);
+        if (Auth::check()) {
+            $progression = Auth::user()->progression;
+            return view('story', ['progression' => $progression]);
+        } else {
+            return view('login');
+        }
     }
 
     public function accueil()
@@ -98,7 +112,18 @@ class FirstController extends Controller
                     $couleurs = $couleurs . "<a id=mission" . $mission->id . " href=/mission/" . $mission->id . ">" . $mission->nom . "<div class='point rouge'></div></a>";
                 }
             } elseif (count($missionav) != 0 or $mission->id == 1) {
-                $couleurs = $couleurs . "<a id=mission" . $mission->id . " href=/mission/" . $mission->id . ">" . $mission->nom . "<div class='point bleu'></div></a>";
+                $bleu = $couleurs . "<a id=mission" . $mission->id . " href=/mission/" . $mission->id . ">" . $mission->nom . "<div class='point bleu'></div></a>";
+                $violet = $couleurs . "<a id=mission" . $mission->id . ">???<div class='point violet'></div></a>";
+                if (date('d/m/Y') == '05/12/2022' and Auth::user()->progression >= 2)
+                    $couleurs = $violet;
+                elseif (date('d/m/Y') == '06/12/2022' and Auth::user()->progression >= 4)
+                    $couleurs = $violet;
+                elseif (date('d/m/Y') == '07/12/2022' and Auth::user()->progression >= 6)
+                    $couleurs = $violet;
+                elseif (date('d/m/Y') == '08/12/2022' and Auth::user()->progression >= 7)
+                    $couleurs = $violet;
+                else 
+                    $couleurs = $bleu;
             } else {
                 $couleurs = $couleurs . "<a id=mission" . $mission->id . ">???<div class='point violet'></div></a>";
             }
@@ -121,7 +146,8 @@ class FirstController extends Controller
         $users = [];
         $totaux = [];
         foreach (User::all() as $user) {
-            array_push($users, [$user->id, $user->name, Score::whereRaw("idUser=" . $user->id)->get()]);
+            if ($user->name != "Admin")
+                array_push($users, [$user->id, $user->name, Score::whereRaw("idUser=" . $user->id)->get()]);
         }
         $calcul = 0;
         foreach ($users as $u) {

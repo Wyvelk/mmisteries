@@ -95,7 +95,6 @@
     color: white;
     text-align: center;
     border-radius: 20px;
-
     margin-left: 50%;
     text-decoration: none;
     transition: 0.3s;
@@ -130,17 +129,6 @@
     top: 5px;
     right: 38px;
     position: absolute;
-}
-
-@media screen and (max-width: 768px){
-
-    .barre-progression{
-        display:none;
-    }
-    .text{
-        flex-basis: 100%;
-    }
-
 }
 
 .point{
@@ -220,6 +208,7 @@
     top: 99%;
 
 }
+
 .progression{
     background-color: #f0c600;
     z-index: 1;
@@ -257,4 +246,38 @@
 #yellow:hover, #purple:hover, #blue:hover, #red:hover{
     letter-spacing: 1px;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 1024px){
+    .text{
+        flex-basis:60%;
+        padding-right: 9em;
+    }    
+}
+
+@media screen and (max-width: 768px){
+
+    .barre-progression{
+        display:none;
+    }
+    .text{
+        flex-basis: 100%;
+        padding-right: 0;
+    }
+
+}
+
+@media screen and (max-width: 425px){
+    .text div div{
+        display: block;
+        text-align: center;
+    }
+
+    .text div a{
+        margin-left: 0;
+    }
+
+    .aventure h2{
+        font-size: x-large;
+    }
 }

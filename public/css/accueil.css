@@ -7,6 +7,7 @@
     height: fit-content;
     color: white;
     position: relative;
+    z-index: -1;
 }
 
 .accueil img{
@@ -37,7 +38,7 @@
 
 .avancee{
     margin-bottom: 4em;
-    z-index: 1;
+    
 }
 
 .avancee h1, .recompenses h1{
@@ -160,19 +161,7 @@
     padding: 0;
   }
 
-
     }
-
-    @media screen and (max-width: 650px){
-        .bandeau{
-          flex-direction: column;
-          width:100%;
-          border-radius: 0;
-            margin: 0;
-        }
-
-
-          }
 
 
 .recompenses h1{
@@ -189,4 +178,75 @@
         text-align: center;
     }
 
+    .equipe i:hover{
+        letter-spacing: 0;
+        font-size: 2rem;
+    }
+
+    .equipe h3{
+        font-size: 1.5rem;
+    }
+
+    .bandeau h4{
+        font-size: large;
+    }
+
+    .bandeau h3{
+        font-size: x-large;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .bandeau{
+      flex-direction: column;
+      width:75%;
+        margin: 0 auto;
+    }
+
+
+    .equipe img{
+        width: 60px;
+        height: auto;
+    }
+    .equipe h3{
+        font-size: x-large;
+    }
+
+    .equipe{
+        margin-top: 1em;
+    }
+
+
+    .bandeau h4{
+        font-size: x-large;
+    }
+
+    .avancee h1, .recompenses h1{
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 425px){
+    .avancee h1, .recompenses h1{
+        font-size: 1.5rem;
+    }
+
+    .bandeau{
+        flex-direction: column;
+        width:100%;
+        border-radius: 0;
+          margin: 0 auto;
+      }
+
+      .equipe{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+
+    .bandeau h4{
+        font-size: large;
+    }
 }

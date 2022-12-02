@@ -15,7 +15,8 @@ class MissionController extends Controller
 {
     public function mission($id)
         {
-            if (Auth::check() and Auth::user()->progression + 1 >= $id) {
+            if (Auth::check()){
+                if(MissionController::jour() + 1 >= $id) {
                 $mission = Mission::whereRaw("id=".$id)->get();
                 $reussi = MissionController::reussi($id);
                 $abandon = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=0")->get();
@@ -23,10 +24,28 @@ class MissionController extends Controller
                 $indice = MissionController::indice($id);
                 $userindice = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
                 return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon]);
+                } else {
+                    return redirect('accueil');
+                }
             } else {
                 return redirect('login');
             }
         }
+
+    public function jour(){
+        $nbr = Auth::user()->progression; 
+        if(Auth::user()->progression == 9)
+            $nbr = 8;
+        if(date('d/m/Y') == '05/12/2022' and Auth::user()->progression >= 2)
+            $nbr = 1;
+        if(date('d/m/Y') == '06/12/2022' and Auth::user()->progression >= 4)
+            $nbr = 3;
+        if(date('d/m/Y') == '07/12/2022' and Auth::user()->progression >= 6)
+            $nbr = 5;
+        if(date('d/m/Y') == '08/12/2022' and Auth::user()->progression >= 7)
+            $nbr = 6;
+        return $nbr;
+    }
 
     public function valider($id, Request $request){
         $mission = Mission::whereRaw('id='.$id)->get();

@@ -11,17 +11,36 @@
     <div class='stats'>
         <h3>Progression dans l'histoire</h3>
         <div class='chemin'>
+            <img src='/uploads/Marche_Tim.gif'>
             <?php $avancee = $progression * (100 / 8);
                     if($avancee > 100)
                         $avancee = 100;
-
             echo "<div class='danschemin'>
     <style> .danschemin{ width:" . $avancee . "%; animation: barre 3s ease-out;}
         @keyframes barre{ from{width: 0%; background-color:black;} to{ background-color:#F0C600; width:" . $avancee . "%;}}
 
-}</style>";
+}</style></div><style>
+.chemin{
+    position: relative;
+}
+.chemin img{
+    width: 10%;
+    position: absolute;
+    left: ". $avancee - 5 ."%;
+    animation: image 3s ease-out;
+}
 
-            ?></div>
+@keyframes image {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: ".$avancee - 5 . "%;
+    }
+  }
+</style>";
+
+            ?>
     </div>
     <div class='list'>
         <a href='#chap1'>Chapitre 1</a>

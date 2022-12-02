@@ -42,7 +42,7 @@
 }
 
 .classement div div p{
-    line-height: 2;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -52,7 +52,7 @@
     margin: 0;
 }
 
-.points div p{
+.points div p, .classement div p{
     line-height: 1.5;
     font-size: x-large;
     margin: 0;
@@ -107,4 +107,65 @@
 .nom img{
     width: 10%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px){
+    .recap{
+        display: block;
+    }
+
+    .classement, .points{
+        justify-content: left;
+    }
+
+    .classement div, .points div{
+        flex-grow: 1;
+    }
+
+    .classement h2{
+        font-size: x-large;
+    }
+
+    .classement div p{
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .recap svg{
+        display: none;
+    }
+
+    .classement h3, .points div h3{
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .nom img{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .objets{
+        flex-direction: column;
+    }
+
+    .objets img{
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .recap{
+        width: 90%;
+    }
+
+    .equipe > div{
+        margin: 0 auto;
+    }
+
+    .classement div p, .points div p{
+        font-size: large;
+    }
 }
