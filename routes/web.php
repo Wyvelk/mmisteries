@@ -32,7 +32,7 @@ Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name(
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-Route::get('/contact',[FirstController::class,'contact']);
+Route::get('/infos',[FirstController::class,'infos']);
 
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php

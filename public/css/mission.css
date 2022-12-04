@@ -230,12 +230,12 @@
     margin: 0 auto;
 }
 
-#m4, #m7, #m8, #m6, #m9{
+#m4, #m7, #m8, #m5, #m6, #m9{
     text-align: center;
     margin-top: 3em;
 }
 
-#m4 a, #m6 a, #m9 a{
+#m4 a, #m6 a, #m9 a, #m5 a{
     text-decoration: none;
     background-color: #eae655;
     color: white;
@@ -246,7 +246,7 @@
     transition: 0.3s;
 }
 
-#m4 a:hover, #m6 a:hover, #m9 a:hover{
+#m4 a:hover, #m6 a:hover, #m9 a:hover, #m5 a:hover{
     letter-spacing: 1px;
     transition: 0.3s;
 }

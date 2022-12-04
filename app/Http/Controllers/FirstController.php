@@ -33,9 +33,13 @@ class FirstController extends Controller
         return view('register');
     }
 
-    public function contact()
+    public function infos()
     {
-        return view('contact');
+        if (Auth::check()) {
+            return view('infos');
+        } else {
+            return redirect('login');
+        }
     }
 
     public function explications()

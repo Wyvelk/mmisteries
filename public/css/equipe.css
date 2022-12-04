@@ -104,6 +104,17 @@
     text-align: center;
 }
 
+.nom a{
+    text-decoration: none;
+    color: #f3D521;
+    transition: 0.3s;
+}
+
+.nom a:hover{
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
 .nom img{
     width: 10%;
     margin: 0 auto;

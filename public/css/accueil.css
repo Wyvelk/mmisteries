@@ -152,23 +152,32 @@
     height: auto;
 }
 
-@media screen and (max-width: 768px){
-  .bandeau{
-    flex-direction: column;
-    width: fit-content;
-    border-radius: 25px;
-    margin: auto;
-    padding: 0;
-  }
-
-    }
-
 
 .recompenses h1{
     margin-right: 55%;
     margin-left: 0;
     text-align: right;
     border-radius: 0 50px 50px 0;
+}
+
+.recompenses img{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px){
+    .bandeau{
+      flex-direction: column;
+      width: fit-content;
+      border-radius: 25px;
+      margin: auto;
+      padding: 0;
+    }
+
+    .recompenses img{
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -239,6 +248,10 @@
         border-radius: 0;
           margin: 0 auto;
       }
+
+      .recompenses img{
+        width: 80%;
+    }
 
       .equipe{
         width: 100%;

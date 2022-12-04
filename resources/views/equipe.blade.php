@@ -15,6 +15,7 @@
             <h2>{{Auth::user()->name}}</h2>
             <h3>{{Auth::user()->slogan}}</h3>
         </div>
+        <a href='/signout'>Se déconnecter</a>
     </div>
     <div class="recap">
         <div class='points'>

@@ -46,7 +46,7 @@
             <a href='/accueil'>Accueil</a>
             <a href='/journal'>Journal</a>
             <a href='/adventure'>Aventure</a>
-            <a href='/contact'>Informations</a>
+            <a href='/infos'>Informations</a>
         </nav>
         <div id="mySidenav" class="sidenav">
                 <a id="closeBtn" href="#" class="close">×</a>
@@ -54,7 +54,7 @@
                     <li><a href='/accueil'>Accueil</a></li>
                     <li><a href='/journal'>Journal</a></li>
                     <li><a href='/adventure'>Aventure</a></li>
-                    <li><a href='/contact'>Informations</a></li>
+                    <li><a href='/infos'>Informations</a></li>
                 </ul>
             </div>
         <a href="#" id="openBtn">

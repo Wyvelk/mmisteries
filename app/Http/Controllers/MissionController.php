@@ -22,8 +22,9 @@ class MissionController extends Controller
                 $abandon = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=0")->get();
                 $dispo = MissionController::points_dispo($id) - MissionController::bonus($id);
                 $indice = MissionController::indice($id);
+                $debloquer_indices = [Score::whereRaw('idUser='.Auth::user()->id)->whereRaw("idMission=3")->whereRaw('reussie=1')->get(), Score::whereRaw('idUser='.Auth::user()->id)->whereRaw("idMission=4")->whereRaw('reussie=1')->get()];
                 $userindice = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
-                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon]);
+                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon, 'debloquer_indices'=>$debloquer_indices]);
                 } else {
                     return redirect('accueil');
                 }
