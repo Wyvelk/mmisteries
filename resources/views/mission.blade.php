@@ -100,7 +100,7 @@
                             <p>Indice 1 <br /><strong>-20% points bonus</strong></p>
                         </a></div>
                     @endif
-                    @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL)
+                    @if(count($userindice) != 0 and $userindice[0]->indice1 != NULL and Auth::user()->progression >= 3)
                     @if($userindice[0]->indice2 != NULL)
                     <div id='i2'>
                         <p>{{$mission[0]->indice2}}</p>
@@ -125,7 +125,7 @@
                         </div>
                         @endif
                     @endif
-                    @if(count($userindice) != 0 and $userindice[0]->indice2 != NULL)
+                    @if(count($userindice) != 0 and $userindice[0]->indice2 != NULL and Auth::user()->progression >= 4)
                     @if($userindice[0]->indice3 != NULL)
                     <div id='i3'>
                         <p>{{$mission[0]->indice3}}</p>
@@ -237,11 +237,13 @@
     </div>
     </div>
     <div class='terminer'>
-        @if(count($abandon) == 0)
+        @if(count($abandon) == 0 and count($valider) == 0)
         <a id='abandon' href='/abandon/{{$mission[0]->id}}'>Abandonner</a>
         <button type='submit' id='valider'>Valider</button>
+        @elseif(count($abandon) == 1)
+        <h3 style='color:red'>Vous avez perdu cette mission...</h3>
         @else
-        <h3>Vous avez perdu cette mission.</h3>
+        <h3 style='color:green'>Vous avez réussi cette mission !</h3>
         @endif
     </div>
     <script>

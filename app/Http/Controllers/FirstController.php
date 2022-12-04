@@ -158,17 +158,17 @@ class FirstController extends Controller
             foreach ($u[2] as $mission) {
                 $calcul += $mission->rapidite + $mission->reussite + $mission->bonus;
             }
-            array_push($totaux, [$u[1], $calcul, $u[0]]);
+            array_push($totaux, [$calcul, $u[1], $u[0]]);
             $calcul = 0;
         }
         rsort($totaux);
         $position = 0;
         $final = [];
         foreach ($totaux as $v) {
-            if (!isset($before) or $before != $v[1])
+            if (!isset($before) or $before != $v[0])
                 $position += 1;
             array_push($final, [$v[0], $v[1], $v[2], $position]);
-            $before = $v[1];
+            $before = $v[0];
         }
         return $final;
     }

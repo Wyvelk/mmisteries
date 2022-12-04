@@ -1,5 +1,4 @@
 .equipe{
-    
     background-image: url('/uploads/fond.jpeg');
     background-size: cover;
     margin: 0 auto;
@@ -116,8 +115,11 @@
 }
 
 .nom img{
-    width: 10%;
+    width: 150px;
+    aspect-ratio: 1/1;
     margin: 0 auto;
+    margin-top: 1em;
+    border-radius: 75px;
 }
 
 @media screen and (max-width: 1024px){
@@ -171,6 +173,7 @@
     .recap{
         width: 90%;
     }
+
 
     .equipe > div{
         margin: 0 auto;

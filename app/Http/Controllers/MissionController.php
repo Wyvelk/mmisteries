@@ -20,11 +20,12 @@ class MissionController extends Controller
                 $mission = Mission::whereRaw("id=".$id)->get();
                 $reussi = MissionController::reussi($id);
                 $abandon = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=0")->get();
+                $valider = Score::whereRaw("idUser=". Auth::user()->id)->whereRaw("idMission=".$id)->whereRaw("reussie=1")->get();
                 $dispo = MissionController::points_dispo($id) - MissionController::bonus($id);
                 $indice = MissionController::indice($id);
                 $debloquer_indices = [Score::whereRaw('idUser='.Auth::user()->id)->whereRaw("idMission=3")->whereRaw('reussie=1')->get(), Score::whereRaw('idUser='.Auth::user()->id)->whereRaw("idMission=4")->whereRaw('reussie=1')->get()];
                 $userindice = Indice::whereRaw('idUser='.Auth::user()->id)->whereRaw('idMission='.$id)->get();
-                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon, 'debloquer_indices'=>$debloquer_indices]);
+                return view('mission', ['mission' => $mission, 'reussi' =>$reussi, 'dispo'=>$dispo, 'indice'=>$indice, 'userindice'=>$userindice, 'abandon'=>$abandon, 'debloquer_indices'=>$debloquer_indices, 'valider'=>$valider]);
                 } else {
                     return redirect('accueil');
                 }
@@ -52,67 +53,67 @@ class MissionController extends Controller
         $mission = Mission::whereRaw('id='.$id)->get();
         
         if($mission[0]->id == 1){
-            if($request->reponse == 'dimension' OR $request->reponse == 'DIMENSION'){
+            if($request->reponse == 'dimension' OR $request->reponse == 'DIMENSION' OR $request->reponse == 'Dimension'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 2){
             if($request->reponse == 'A14BC6' OR $request->reponse == 'a14bc6'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 3){
-            if($request->reponse == 'AMPLIFICATEUR' OR $request->reponse == 'amplificateur'){
+            if($request->reponse == 'AMPLIFICATEUR' OR $request->reponse == 'amplificateur' OR $request->reponse == 'Amplificateur'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 4){
             if($request->reponse == '102F' OR $request->reponse == '102f'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 5){
-            if($request->reponse == 'Université' OR $request->reponse == 'UNIVERSITÉ' OR $request->reponse == 'UNIVERSITE' OR $request->reponse == 'universite' OR $request->reponse == 'université'){
+            if($request->reponse == 'Université' OR $request->reponse == 'UNIVERSITÉ' OR $request->reponse == 'UNIVERSITE' OR $request->reponse == 'universite' OR $request->reponse == 'université' OR $request->reponse == 'Universite'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 6){
             if($request->reponse == 'Le cyclope rampant' OR $request->reponse == 'LE CYCLOPE RAMPANT' OR $request->reponse == 'Le Cyclope Rampant' OR $request->reponse == 'le cyclope rampant'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 7){
-            if($request->reponse == 'Studio audiovisuel' OR $request->reponse == 'STUDIO AUDIOVISUEL' OR $request->reponse == 'STUDIO' OR $request->reponse == 'Studio'){
+            if($request->reponse == 'Studio audiovisuel' OR $request->reponse == 'STUDIO AUDIOVISUEL' OR $request->reponse == 'STUDIO' OR $request->reponse == 'studio audiovisuel'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 8){
             if($request->reponse == '713705'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('mission/'.$id);
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         } elseif($mission[0]->id == 9){
-            if($request->reponse == 'BRAVO'){
+            if($request->reponse == 'BRAVO' or $request->reponse == 'bravo' or $request->reponse == 'Bravo'){
                 MissionController::create($id);
-                return redirect('/accueil');
+                return redirect('accueil');
             } else {
-                MissionController::abandon($id);
+                return redirect('abandon/'.$id);
             }
         }
     }
@@ -156,7 +157,7 @@ class MissionController extends Controller
             $bonus = 50;
             $rapidite = 90;
         }
-        $dispo = $rapidite / count($users) - 1;
+        $dispo = $rapidite / (count($users) - 1);
         array_push($final, $reussite);
         array_push($final, $rapidite - ($dispo * MissionController::reussi($id)));
         array_push($final, $bonus - MissionController::bonus($id));
@@ -178,7 +179,6 @@ class MissionController extends Controller
             $user[0]->progression = $id;
             $user[0]->save();
         }
-
         return redirect('mission/'.$id);
     }
 
@@ -194,7 +194,7 @@ class MissionController extends Controller
         } else{
             $points = 150;
         }
-        $dispo = ($maxi[0]->pointsmax - $points) / count($users) - 1;
+        $dispo = ($maxi[0]->pointsmax - $points) / (count($users) - 1);
         return ($maxi[0]->pointsmax) - ($dispo * MissionController::reussi($id));
     }
 

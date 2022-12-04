@@ -66,7 +66,7 @@
                     @if($u[3] == 1)
                     <div>
                         <h2>1er</h2>
-                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                        <p>{{$u[1]}} ~ {{$u[0]}} points</p>
                     </div>
                     @endif
                 @endforeach
@@ -74,7 +74,7 @@
                     @if($u[3] == 2)
                     <div>
                         <h2>2ème</h2>
-                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                        <p>{{$u[1]}} ~ {{$u[0]}} points</p>
                     </div>
                     @endif
                 @endforeach
@@ -82,7 +82,7 @@
                     @if($u[3] == 3)
                     <div>
                         <h2>3ème</h2>
-                        <p>{{$u[0]}} ~ {{$u[1]}} points</p>
+                        <p>{{$u[1]}} ~ {{$u[0]}} points</p>
                     </div>
                     @endif
                 @endforeach
