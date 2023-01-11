@@ -17,7 +17,9 @@
         <source src="/uploads/final_4.mp4" type="video/mp4">
         @elseif(date('d/m/Y') == '09/12/2022')
         <source src="/uploads/final_5.mp4" type="video/mp4">
-        @endif   
+        @else
+        <source src="/uploads/final_5.mp4" type="video/mp4">
+        @endif 
     </video>
     <img class='arbre' src='/uploads/arbre.png' alt='image arbre'>
 </section>
@@ -83,7 +85,7 @@
 <section class='recompenses'>
     <h1>Récompenses à la clé</h1>
         <img src='/uploads/recomp.png'>
-        <h3 style='text-align:center;'>Rendez-vous dans le Hall MMI après 17h vendredi pour la remise des prix !</h3>
+        <h3 style='text-align:center;'>Rendez-vous en 01F à 15h30 vendredi pour la remise des prix !</h3>
 </section>
 
 @endsection('content')

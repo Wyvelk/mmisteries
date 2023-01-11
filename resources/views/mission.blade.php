@@ -19,7 +19,7 @@
                 Retrouver la provenance de ce bruit vous permettrait de comprendre où se cache Tim. Mais il semble
                 la situation soit déjà prise en main par certains professeurs qui souhaitent garder cette affaire secrète.<br /><br />
                 Mme Hayenne fut la première à s'y intéresser et n'accepterait pas une seconde que des étudiants s'en mêlent. Il vous
-                faut choisir entre précision ou prudence. Interroger Mme Hayenne ou chercher le téléphone sans indices malencontreusement divulgués de sa part ?
+                faut rester prudent et discret.
             </p>
             @elseif($mission[0]->id == 2)
             <p><strong>Description</strong><br /><br />
@@ -156,7 +156,7 @@
                     <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                         @csrf
                         <label>Une fois le téléphone trouvé, résolvez l'éngime qui se cache avec lui en tapant votre réponse ci-dessous.</label>
-                        <input type='text' name='reponse' placeholder='Entrez le mot-code'>
+                        <input type='text' name='reponse' placeholder='Entrez le mot-code (9 lettres)'>
                     </form>
                 </div>
                 @elseif($mission[0]->id == 2)
@@ -173,7 +173,7 @@
                     <img id='m3' src='/uploads/mission3.png'>
                     <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                         @csrf
-                        <input type='text' name='reponse' placeholder='Entrez la solution'>
+                        <input type='text' name='reponse' placeholder='Entrez le mot'>
                     </form>
                 </div>
                 @elseif($mission[0]->id == 4)
@@ -181,7 +181,7 @@
                     <a href="/uploads/unknown.zip" download="Unknown.zip">Télécharger</a>
                     <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                         @csrf
-                        <input type='text' name='reponse' placeholder="Où se trouve l'amplificateur ?">
+                        <input type='text' name='reponse' placeholder="Entrez le nom de la salle">
                     </form>
                 </div>
                 @elseif($mission[0]->id == 5)
@@ -217,7 +217,7 @@
                     </h3>
                     <form action="/valider/{{$mission[0]->id}}" name='enigme' method='post'>
                         @csrf
-                        <input type='text' name='reponse' placeholder="Entrez un nombre">
+                        <input type='text' name='reponse' placeholder="Entrez un nombre à 6 chiffres">
                     </form>
                 </div>
                 @elseif($mission[0]->id == 9)

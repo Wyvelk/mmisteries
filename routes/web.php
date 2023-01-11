@@ -15,7 +15,7 @@ use App\Http\Controllers\MissionController;
 |
 */
 
-Route::get('/', [FirstController::class, 'start']);
+Route::get('/', [FirstController::class, 'accueil']);
 
 Route::get('/accueil', [FirstController::class, 'accueil']);
 Route::get('/adventure', [FirstController::class, 'adventure']);
